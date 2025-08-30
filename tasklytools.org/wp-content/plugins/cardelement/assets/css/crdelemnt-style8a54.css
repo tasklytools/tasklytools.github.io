@@ -1,0 +1,259 @@
+    .plugin-container {
+        width: 100%;
+        padding:0 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    /*Benefit Section Start*/
+    section#BenefitsSec {
+        background: #ccc;
+        min-height: 478px;
+        overflow: hidden;
+    }
+    #BenefitsSec img {
+        width: 73%;
+        height: auto;
+        max-height: 478px; /* Adjust if needed */
+        display: block;
+    }
+    .whatido {
+        display: flex;
+        justify-content: center;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    .whatido span {
+        border-bottom: 3px solid #ff497c;
+        color: #065f02;
+    }
+    .imageoverlay {
+        font-size: 3.5rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+    .imageoverlay img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        padding: 5px;
+        border: 3px solid #ccc;
+    }
+    .image-container {
+        min-height: 300px; /* Reserve space to prevent layout shifts */
+    }
+    
+    .cards {
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: transparent;
+        background-clip: border-box;
+        border-radius: .25rem;
+        align-content: stretch;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+    .cards-header h1 {
+        font-weight: 900 !important;
+        color: rgb(50, 54, 57) !important;
+        --tcb-applied-color: rgb(50, 54, 57) !important;
+        line-height: 50px !important;
+        font-size: 40px;
+        font-family: Open sans-serif;
+    }
+    .highlight {
+        color: red; /* Change the color as needed */
+        font-weight: bold; /* Additional styling */
+    }
+
+    .cards-header {
+        padding: 0.5rem 1rem;
+        margin-bottom: 0;
+    }
+    a.getbtn{
+    display: inline-block;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 5px;
+    transition: color .15sease-in-out, background-color .15sease-in-out, border-color .15sease-in-out, box-shadow .15sease-in-out;
+    }
+    a.getbtn:hover{
+        color: #111010;
+    }
+    a.text-white-py {
+        color: #fff;
+    }
+    .card-bodycss{
+        padding:0 1rem;
+    }
+    .card-bodycss p {
+        font-weight: 500;
+    }
+    .card-bodyp p{
+        padding: 0 !important;
+    }
+    /*Benefit Section End*/
+    .tools-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1.5rem;
+        padding: 5px;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .tool-card {
+        background: white;
+        border-radius: 10px;
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+        cursor: pointer;
+    }
+
+    .tool-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .tool-icon {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+    }
+
+    .category-section {
+        margin: 4rem 0;
+        padding: 0 2rem;
+    }
+
+    .category-title {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 1.7rem;
+        color: var(--primary-color);
+    }
+
+    .cta-button {
+        background: var(--primary-color);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 25px;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 1rem;
+        transition: background 0.3s;
+    }
+
+    .cta-button:hover {
+        background: var(--secondary-color);
+    }
+    
+    span.title-color {
+        color: #F44336;
+        border-bottom: 3px solid #2563eb;
+    }
+
+    .tools-card a {
+    color: #212529;
+    text-decoration: none;
+    border: 0.1px solid #bbbbbb;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    text-decoration: none;
+  }
+
+    .tools-card a:hover {
+      box-shadow: 10px 6px 28px #ddd;
+      text-decoration: none;
+    }
+    .hidebutton {
+        display: flex;
+        justify-content: center;
+    }
+    .usenowbutton{
+        display: none;
+    }
+
+/*--------------------------------------------------
+                    Responsive Css
+---------------------------------------------------*/  
+      /* Responsive max-widths */
+      @media (min-width: 576px) {
+        .plugin-container {
+          max-width: 540px;
+        }
+      }
+      @media screen and (max-width: 650px) {
+        .usenowbutton {
+            display: block;
+            width: 60%;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            background: #0984e3;
+            color: #fff;
+        }
+      
+      }
+      
+      @media (min-width: 768px) {
+        .plugin-container {
+          max-width: 720px;
+        }
+        .tools-grid {
+            grid-template-columns: repeat(1, 1fr);
+        }
+      }
+      
+      @media (min-width: 992px) {
+        .plugin-container {
+          max-width: 960px;
+        }
+        .plugin-container.cards-per-row-1 .tools-grid {
+          grid-template-columns: repeat(1, 1fr);
+        }
+        .plugin-container.cards-per-row-2 .tools-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .plugin-container.cards-per-row-3 .tools-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .plugin-container.cards-per-row-4 .tools-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+        .plugin-container.cards-per-row-5 .tools-grid {
+          grid-template-columns: repeat(5, 1fr);
+        }
+        .plugin-container.cards-per-row-6 .tools-grid {
+          grid-template-columns: repeat(6, 1fr);
+        }
+        
+      }
+      
+      @media (min-width: 1200px) {
+        .plugin-container {
+          max-width: 100%;
+        }
+      }
+      
+      @media (min-width: 1400px) {
+        .plugin-container {
+          max-width: 100%;
+        }
+      }
+      

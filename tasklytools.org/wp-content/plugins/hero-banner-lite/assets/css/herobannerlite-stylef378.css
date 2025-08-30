@@ -1,0 +1,219 @@
+.hbl-body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  padding: 20px;
+}
+
+/* Container */
+.hbl-container,
+.hbl-container-fluid {
+  width: 100%;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+.hbl-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2563eb !important;
+}
+.hbl-container p {
+	color: #64748b;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+.hbl-position {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Row */
+.hblrow {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -0.75rem;
+  margin-left: -0.75rem;
+  padding: 0 5px;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Grid Column (Responsive) */
+.hbl-col-sm-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding-left: 15px;
+  padding-right: 15px;
+  box-sizing: border-box;
+}
+@media (max-width: 575.98px) {
+  .hbl-col-sm-6 {
+      flex: 0 0 100%;
+      max-width: 100%;
+  }
+}
+
+/* Doublesec grid layout */
+.doublesec {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 3rem 0.75rem;
+}
+@media (min-width: 768px) {
+  .doublesec {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Button Styles */
+.hbl-btn {
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+  transition: all 0.15s ease-in-out;
+}
+
+.hbl-btn-primary {
+  color: #fff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.hbl-btn-primary:hover {
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
+  color: #f2f2f2;
+}
+
+/* Typography & Spacing */
+.fs-3 {
+  font-size: calc(1.3rem + 0.6vw) !important;
+}
+
+.hblmb-3 {
+  margin-bottom: 1rem !important;
+}
+
+.hblpy-5 {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+.hblp-2 {
+  padding: 0.5rem !important;
+}
+
+.hbl-rounded {
+  border-radius: 0.25rem !important;
+}
+
+/* Image */
+.hbl-img-thumbnail {
+  padding: 0.25rem;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 0.375rem;
+  max-width: 100%;
+  height: auto;
+}
+.hbl-img-fluid {
+  width: 100%;
+  height: auto;
+  padding-bottom: 15px;
+}
+
+/* Flex Utility */
+.d-flex {
+  display: flex !important;
+}
+.hbl-justify-content-center {
+  justify-content: center !important;
+}
+
+/* Content Alignment */
+.hero-banner-lite-split {
+  width: 100%;
+  margin: 0 auto;
+}
+.hero-banner-content {
+  display: flex;
+  align-content: center;
+}
+.text-align-center {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+
+/* Hero Section */
+.hero-banner-lite {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0 20px;
+  color: white;
+  text-align: center;
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hbl-container.row-md-position {
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Card Items */
+.hbl-item-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.hbl-single-item {
+  flex: 1 1 calc(33.33% - 20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #f2f2f2;
+  border-radius: 0 0 15px 15px;
+  border: 1px solid transparent;
+}
+.hbl-single-item:hover {
+  border: 1px solid #b1b1b1;
+}
+
+/* Read More Button */
+.readmorebtn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+.readmorebtn a {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.readmorebtn a:hover {
+  background-color: #ddd;
+  color: #000;
+}

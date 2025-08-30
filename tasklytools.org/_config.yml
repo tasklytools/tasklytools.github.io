@@ -1,0 +1,12 @@
+# _config.yml
+
+title: Taskly Tools
+description: Free online tools like image compressor, converter, etc.
+url: "https://tasklytools.org"
+
+# Use "pretty" permalinks (removes .html and uses trailing slash)
+permalink: pretty
+
+# GitHub Pages build settings
+markdown: kramdown
+theme: minima   # or your custom theme
