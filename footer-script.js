@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch(error => console.error("Error loading the navbar:", error));
     
-    fetch("/sidebar.html")
+    fetch("../sidebar.html")
         .then(response => response.text())
         .then(data => {
             document.getElementById("sidebar-container-page").innerHTML = data;
