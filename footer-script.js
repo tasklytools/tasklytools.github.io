@@ -1,47 +1,50 @@
-// Function to load navbar and footer
+// Function to load navbar, sidebar, footer, etc.
 document.addEventListener("DOMContentLoaded", function () {
-    fetch("navbar.html")
+    const basePath = window.location.origin; // e.g. https://tasklytools.org
+
+    fetch(basePath + "/navbar.html")
         .then(response => response.text())
         .then(data => {
             document.getElementById("navbar-container").innerHTML = data;
         })
         .catch(error => console.error("Error loading the navbar:", error));
     
-    fetch("page-navbar.html")
+    fetch(basePath + "/page-navbar.html")
         .then(response => response.text())
         .then(data => {
             document.getElementById("navbar-container-page").innerHTML = data;
         })
-        .catch(error => console.error("Error loading the navbar:", error));
+        .catch(error => console.error("Error loading the page-navbar:", error));
     
-    fetch("related-post.html")
+    fetch(basePath + "/related-post.html")
         .then(response => response.text())
         .then(data => {
             document.getElementById("relatedpost-container-page").innerHTML = data;
         })
-        .catch(error => console.error("Error loading the navbar:", error));
+        .catch(error => console.error("Error loading related post:", error));
 
-    fetch("sponsored.html")
+    fetch(basePath + "/sponsored.html")
         .then(response => response.text())
         .then(data => {
             document.getElementById("sponsored-container").innerHTML = data;
         })
-        .catch(error => console.error("Error loading the navbar:", error));
+        .catch(error => console.error("Error loading sponsored:", error));
     
-    fetch("../sidebar.html")
+    fetch(basePath + "/sidebar.html")
         .then(response => response.text())
         .then(data => {
             document.getElementById("sidebar-container-page").innerHTML = data;
         })
-        .catch(error => console.error("Error loading the navbar:", error));
-    fetch("sidebar-top.html")
+        .catch(error => console.error("Error loading sidebar:", error));
+
+    fetch(basePath + "/sidebar-top.html")
         .then(response => response.text())
         .then(data => {
             document.getElementById("sidebar-container-page-head").innerHTML = data;
         })
         .catch(error => console.error("Error loading the Sidebar Top:", error));
 
-    fetch("footer.html")
+    fetch(basePath + "/footer.html")
         .then(response => response.text())
         .then(data => {
             document.getElementById("footer-container").innerHTML = data;
