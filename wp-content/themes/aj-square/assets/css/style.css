@@ -29,6 +29,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    font-display: swap;
 }
 a {
     color: var(--link-color) !important;
@@ -146,6 +147,7 @@ section.main-wrap-head {
     overflow: hidden;
     padding: 0;
 	background:linear-gradient(45deg, #eff6ff, #ffffff);
+    min-height: 500px;
 }
 .hero-section-full-width h1 {
     font-size: 2.5rem;

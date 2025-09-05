@@ -6,10 +6,11 @@
 
  @font-face {
   font-family: "bootstrap-icons";
-  src: url("bootstrap-icons.woff2") format("woff2"),
-       url("bootstrap-icons.woff") format("woff");
+  src: url("/wp-content/themes/aj-square/assets/bootstrap-icons/bootstrap-icons.woff2") format("woff2"),
+       url("/wp-content/themes/aj-square/assets/bootstrap-icons/bootstrap-icons.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+  font-display: swap; /* <- This fixes the issue */
 }
 
 .bi::before,
