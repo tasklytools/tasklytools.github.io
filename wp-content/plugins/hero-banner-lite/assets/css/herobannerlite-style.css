@@ -16,12 +16,14 @@
 .hbl-container h1 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: #2563eb !important;
+    color: #141414 !important;
+    font-weight: 700;
 }
 .hbl-container p {
-	color: #64748b;
+	color: #141414 !important;
     max-width: 600px;
     margin: 0 auto 2rem;
+    font-weight: 700;
 }
 .hbl-position {
     display: flex;
