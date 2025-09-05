@@ -1050,7 +1050,8 @@ h2.latest-post-content.text-center {
     .customblock-widget p {
         padding: 10px 0;
         line-height: 30px;
-        font-size: 18px;
+        font-weight: normal;
+        color: #141414;
     }
     .customblock-widget{
         align-items: center;

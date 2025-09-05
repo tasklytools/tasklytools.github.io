@@ -142,8 +142,9 @@
     .category-title {
         text-align: center;
         margin-bottom: 2rem;
-        font-size: 1.7rem;
-        color: var(--primary-color);
+        font-size: 1.4rem;
+        color: #141414;
+        font-weight: normal;
     }
 
     .cta-button {
