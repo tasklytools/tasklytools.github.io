@@ -962,6 +962,13 @@ h2.latest-post-content.text-center {
 .editor-visual-editor__post-title-wrapper.edit-post-visual-editor__post-title-wrapper h1, h2, h3 {
     line-height: 3rem;
 }
+.btn-primary{
+    background: #0000FF !important;
+    color: #ffffff !important;
+}
+.btn-primary:hover{
+    background-color: #007bff !important;
+}
 /* Featured Image CSS */
 /*=====================================================================================
     10. Sidebar Css
@@ -1157,13 +1164,14 @@ a.social-icon {
     background: transparent;
     transition: all 0.3s ease-in-out;
     border-radius: 50%;
-    padding: 5px 8px;
+    padding: 5px;
     margin: 1px;
 }
 a.social-icon:hover {
     color: var(--pink-color) !important;
     border: 3px solid #fff;
     background: #fff;
+    text-decoration: none;
 }
 /*=================================================================================
      12. Author Widget CSS Start
