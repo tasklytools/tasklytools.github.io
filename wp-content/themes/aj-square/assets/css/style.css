@@ -248,7 +248,12 @@ span.site-title {
 span.site-title {
     font-size: 30px;
 }
-
+.herosec-bg {
+    background: linear-gradient(135deg, #136a8a, #267871);
+}
+.herosec-bg h1,.herosec-bg p  {
+    color: #fff;
+}
 /*=====================================================================================
     4. Navigation Bar CSS
 ======================================================================================*/
@@ -969,7 +974,8 @@ h2.latest-post-content.text-center {
     color: #ffffff !important;
 }
 .btn-primary:hover{
-    background-color: #007bff !important;
+    background-color: #fff !important;
+    color: #000 !important;
 }
 /* Featured Image CSS */
 /*=====================================================================================
@@ -1488,6 +1494,9 @@ footer.comment-meta a:hover {
         line-height: 1.2; /* Adjust line height for better spacing */
         text-align: center; /* Ensure it's centered on mobile */
 		font-size: 1.2rem;
+    }
+    footer.footer-section h2{
+        text-align: left;
     }
 
 }
