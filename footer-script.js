@@ -29,6 +29,13 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("sponsored-container").innerHTML = data;
         })
         .catch(error => console.error("Error loading sponsored:", error));
+
+    fetch(basePath + "/socialandauthor.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("socialandauthor").innerHTML = data;
+        })
+        .catch(error => console.error("Error loading...", error));
     
     fetch(basePath + "/sidebar.html")
         .then(response => response.text())

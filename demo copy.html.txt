@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="All-in-One Free Tools — Use It, Get Results, We Store Nothing.">
+		<meta name="description" content="description here ...">
 		<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
 		<meta http-equiv="Cache-Control" content="max-age=86400">
 
@@ -119,7 +119,7 @@
 				"url": "https://tasklytools.org/wp-content/uploads/2025/05/taskly-tools.png"
 				}
 			},
-			"description": "TasklyTools offers free online tools and utilities to simplify your digital life. Explore productivity, SEO, text, image, and development tools designed for efficiency.",
+			"description": "description here ...",
 			"keywords": [
 				"TasklyTools",
 				"Free Online Tools",
