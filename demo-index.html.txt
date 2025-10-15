@@ -10,7 +10,7 @@
 	<!-- This site is optimized with the Yoast SEO plugin v25.8 - https://yoast.com/wordpress/plugins/seo/ -->
 	<title>Unlock the Future with Ultra Tool V4 4.4 Free Download – The Ultimate Guide - Taskly Tools</title>
 	<meta name="description" content="Unlock Android devices with Ultra Tool V4 4.4 Free Download —bypass FRP, remove screen locks, and more with this powerful free tool!" />
-	<link rel="canonical" href="index.html" />
+	<link rel="canonical" href="https://tasklytools.org/" />
 	<meta property="og:locale" content="en_US" />
 	<meta property="og:type" content="article" />
 	<meta property="og:title" content="Unlock the Future with Ultra Tool V4 4.4 Free Download – The Ultimate Guide - Taskly Tools" />

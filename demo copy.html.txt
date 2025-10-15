@@ -10,7 +10,7 @@
 
 		<!-- This site is optimized with the Yoast SEO plugin v25.8 - https://yoast.com/wordpress/plugins/seo/ -->
 		<title>All-in-One Free Tools - Taskly Tools</title>
-		<link rel="canonical" href="https://tasklytools.org/" />
+		<link rel="canonical" href="https://tasklytools.org/url-here..." />
 		<meta property="og:locale" content="en_US" />
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content="All-in-One Free Tools - Taskly Tools" />
