@@ -70,5 +70,10 @@
     <priority>0.8</priority>
     <lastmod>2025-10-14</lastmod>
   </url>
+  <url>
+    <loc>https://tasklytools.org/utility-tools/</loc>
+    <priority>0.8</priority>
+      <lastmod>2026-04-27</lastmod>
+  </url>
 
 </urlset>
