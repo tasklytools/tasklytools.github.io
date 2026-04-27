@@ -937,7 +937,7 @@
                         </div>
                     </div>
                     
-                    <button class="tlsbtn btn btn-block" id="calculateBmi">Calculate BMI</button>
+                    <button class="tlsbtn btn btn-block" id="calculateBmi" style="display:none;">Calculate BMI</button>
                     
                     <div class="tsklytl-result-box">
                         <div id="bmiResult">Your BMI: </div>

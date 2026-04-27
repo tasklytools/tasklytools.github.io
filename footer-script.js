@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   fetch(basePath + "/pre-load.html")
     .then(response => response.text())
     .then(data => {
-      document.getElementById("pre-load-animation").innerHTML = data;
+      document.querySelector("#pre-load-animation").innerHTML = data;
 
       // ✅ Now that pre-load.html is injected, run loader logic here
       const siteLogo = "/wp-content/uploads/2025/05/taskly-tools.png"; // your logo
@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (dynamicLogo) dynamicLogo.src = siteLogo;
 
       window.addEventListener('load', () => {
+        // Hide preloader on every page load (including reload)
         const loader = document.getElementById('app-boot-bg-loader');
         if (loader) {
           setTimeout(() => {
@@ -21,6 +22,15 @@ document.addEventListener("DOMContentLoaded", function () {
           }, 800);
         }
       });
+      
+      // Fallback: ensure loader hides after 3 seconds max
+      setTimeout(() => {
+        const loader = document.getElementById('app-boot-bg-loader');
+        if (loader && !loader.classList.contains('hide')) {
+          loader.classList.add('hide');
+          document.body.style.overflow = 'auto';
+        }
+      }, 3000);
     })
     .catch(error => console.error("Error loading preloader:", error));
 

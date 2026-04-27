@@ -258,11 +258,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             
                             <div class="upload-area" id="dropZone">
                                 <input type="file" id="pdfInput" accept="application/pdf" hidden>
-                                <i class="bi bi-plus"></i>
-                                <p class="mt-3">Drag and drop PDF file here or click to upload</p>
-                                <small class="text-muted">(Max file size: 25MB)</small>
-                                <!-- Add this file info display -->
-                                <div class="file-info" id="fileInfo">
+                                <div id="uploadPrompt">
+                                    <i class="bi bi-plus"></i>
+                                    <p class="mt-3">Drag and drop PDF file here or click to upload</p>
+                                    <small class="text-muted">(Max file size: 25MB)</small>
+                                </div>
+                                <div class="file-info" id="fileInfo" style="display: none;">
                                     <span class="pdf-icon">📄</span>
                                     <span id="fileName"></span>
                                     <br><br>
@@ -524,7 +525,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             uploadedPdf = await file.arrayBuffer();
             extractBtn.disabled = false;
             
-            // Show file info
+            // Hide upload prompt, show file info
+            document.getElementById('uploadPrompt').style.display = 'none';
             const fileInfo = document.getElementById('fileInfo');
             const fileName = document.getElementById('fileName');
             fileName.textContent = file.name;
@@ -586,6 +588,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         // Reset Functionality
         document.getElementById('resetBtn').addEventListener('click', () => {
             document.getElementById('fileInfo').style.display = 'none';
+            document.getElementById('uploadPrompt').style.display = 'block';
             window.location.reload();
         });
     </script>

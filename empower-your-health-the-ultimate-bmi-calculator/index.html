@@ -71,6 +71,19 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
 		background: none !important;
 		padding: 0 !important;
 	}
+    /*Close Button*/
+    .btn-close::before {
+        content: "\00d7"; /* Unicode for multiplication sign (×) */
+        font-size: 1.5rem;
+        color: #000; /* Change to desired color */
+    }
+    button.btn-close {
+        border: 0px;
+        background: none;
+    }
+    button.btn-close:hover::before {
+        color: #cf2323;
+    }
 </style>
 <link rel='stylesheet' id='wp-block-library-css' href='/wp-includes/css/dist/block-library/style.min6c2d.css?ver=6.8.2' type='text/css' media='all' />
 <style id='wp-block-library-inline-css' type='text/css'>
@@ -151,6 +164,9 @@ gtag("config", "GT-MJWCNQXM");
 				color: #141414;
 				font-size: 15px;
 			}
+            button#calculateBmi {
+                display: none;
+            }
 			@media (min-width: 992px) {
 					.tools-grid {
 						grid-template-columns: repeat(3, 1fr);
@@ -324,7 +340,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     
                                 </div>
 
-                                <button type="submit" class="btn btn-primary w-100"><i class="bi bi-calculator"></i> Calculate BMI</button>
+                                <button type="submit" class="btn btn-primary w-100">
+                                    <i class="bi bi-calculator"></i> Calculate BMI
+                                </button>
                             </form>
                         </div>
                     </div>
@@ -462,7 +480,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title"><i class="bi bi-clipboard2-pulse"></i> BMI Result & Health Advice</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <button type="button" class="btn-close" onclick="document.getElementById('resultModal').style.display='none';document.querySelectorAll('.modal-backdrop').forEach(el=>el.remove());resetBMICalculator();"></button>
                 </div>
                 <div class="modal-body">
                     <div class="gauge-container">
@@ -488,7 +506,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    <button type="button" class="btn btn-secondary" onclick="document.getElementById('resultModal').style.display='none';document.querySelectorAll('.modal-backdrop').forEach(el=>el.remove());location.reload();">
                         <i class="bi bi-arrow-repeat"></i> Try Again
                     </button>
                 </div>
@@ -511,12 +529,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <script type='text/javascript' src="/footer-script.js"></script>
         <script type='text/javascript' src="/nav.js"></script>
 
-    </body>
-
-<!-- Mirrored from tasklytools.org/empower-your-health-the-ultimate-bmi-calculator/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 28 Aug 2025 14:17:50 GMT -->
-</html>
     <!-- Scripts -->
     <script src="//cdn.jsdelivr.net/npm/bootstrap%405.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Handle modal close/reset properly
+        document.getElementById('resultModal').addEventListener('hidden.bs.modal', function () {
+            resetBMICalculator();
+        });
+
+        function resetBMICalculator() {
+            document.getElementById('bmiForm').reset();
+            document.getElementById('height').classList.remove('d-none');
+            document.getElementById('feetInchesInput').classList.add('d-none');
+        }
+    </script>
     <script>
         // Height unit conversion logic same as previous
         // BMI calculation logic
@@ -610,4 +636,5 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 new bootstrap.Modal(document.getElementById('resultModal')).show();
             });
         </script>
-	
+    </body>
+</html>

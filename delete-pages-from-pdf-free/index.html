@@ -247,12 +247,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         </div>
 
                         <div class="card shadow-lg mb-4">
-                            <div class="card-header bg-primary text-white">
+                            <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
                                 <h5 class="mb-0">Upload PDF</h5>
+                                <button class="btn btn-sm btn-light" id="changeFileBtn" style="display: none;" onclick="resetUpload()">
+                                    <i class="bi bi-arrow-repeat"></i> Change File
+                                </button>
                             </div>
-                            <div class="card-body">
-                                <input type="file" id="pdfInput" class="form-control" accept="application/pdf">
-                                
+                            <div class="card-body" id="uploadCardBody">
+                                <div id="uploadSection">
+                                    <input type="file" id="pdfInput" class="form-control" accept="application/pdf">
+                                </div>
                                 <div class="advanced-options mt-4">
                                     <h5 class="mb-3">Advanced Settings</h5>
                                     <div class="row g-3">
@@ -571,7 +575,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             }
             // 👉 Show the Process button after upload
             document.getElementById('saveBtn').classList.remove('d-none');
+            
+            // Hide upload section, show change file button
+            document.getElementById('uploadSection').style.display = 'none';
+            document.getElementById('changeFileBtn').style.display = 'block';
         });
+        
+        function resetUpload() {
+            document.getElementById('uploadSection').style.display = 'block';
+            document.getElementById('changeFileBtn').style.display = 'none';
+            document.getElementById('pageContainer').innerHTML = '';
+            document.getElementById('saveBtn').classList.add('d-none');
+            document.getElementById('pdfInput').value = '';
+            pdfDoc = null;
+            modifiedPages = [];
+        }
 
         function deletePage(index) {
             modifiedPages = modifiedPages.filter(i => i !== index);
