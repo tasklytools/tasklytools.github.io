@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="description here ...">
 		<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+		<!--meta name="google-site-verification" content="glcvROMGexzI78HbOxKWnbXBcfdhABPqHsXvZ3--Ra0" /-->
 		<meta http-equiv="Cache-Control" content="max-age=86400">
 
 		<!-- This site is optimized with the Yoast SEO plugin v25.8 - https://yoast.com/wordpress/plugins/seo/ -->
