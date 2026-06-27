@@ -1,67 +1,52 @@
-    // tsklytlmodal functionality
-        const tsklytlmodal = document.getElementById('tooltsklytlmodal');
-        const tsklytlmodalTitle = document.getElementById('tsklytlmodalTitle');
-        const tsklytlmodalBody = document.getElementById('tsklytlmodalBody');
-        const closetsklytlmodal = document.querySelector('.tsklytl-close-modal');
-        
-        // Close tsklytlmodal when clicking on close button
+// tsklytlmodal functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const tsklytlmodal = document.getElementById('tooltsklytlmodal');
+    if (!tsklytlmodal) return;
+    
+    const tsklytlmodalTitle = document.getElementById('tsklytlmodalTitle');
+    const tsklytlmodalBody = document.getElementById('tsklytlmodalBody');
+    const closetsklytlmodal = document.querySelector('.tsklytl-close-modal');
+    
+    if (closetsklytlmodal) {
         closetsklytlmodal.addEventListener('click', () => {
             tsklytlmodal.style.display = 'none';
         });
+    }
+    
+    window.addEventListener('click', (e) => {
+        if (e.target === tsklytlmodal) {
+            tsklytlmodal.style.display = 'none';
+        }
+    });
         
-        // Close tsklytlmodal when clicking outside of tsklytlmodal content
-        window.addEventListener('click', (e) => {
-            if (e.target === tsklytlmodal) {
-                tsklytlmodal.style.display = 'none';
-            }
-        });
-        
-        // Tool functionality
-        document.querySelectorAll('.tsklytl-tool-btn').forEach(button => {
+    // Tool functionality
+    const toolBtns = document.querySelectorAll('.tsklytl-tool-btn');
+    if (toolBtns.length > 0) {
+        toolBtns.forEach(button => {
             button.addEventListener('click', function(e) {
                 e.preventDefault();
                 
                 const toolName = this.dataset.tool;
                 const card = this.closest('.tsklytl-taskly_tool-card');
-                const title = card.querySelector('h3').textContent;
+                if (!card) return;
+                const title = card.querySelector('h3');
+                if (!title) return;
                 
                 // Set tsklytlmodal title
-                tsklytlmodalTitle.textContent = title;
-                
-                // Create ripple effect
-                createRipple(this);
+                tsklytlmodalTitle.textContent = title.textContent;
                 
                 // Load tool content
                 loadTool(toolName);
                 
-                // Show tsklytlmodal
+// Show tsklytlmodal
                 tsklytlmodal.style.display = 'block';
             });
         });
-        
-        // Create ripple effect
-        function createRipple(button) {
-            const ripple = document.createElement('span');
-            ripple.classList.add('ripple');
-            button.appendChild(ripple);
-            
-            const rect = button.getBoundingClientRect();
-            const size = Math.max(rect.width, rect.height);
-            const x = event.clientX - rect.left - size/2;
-            const y = event.clientY - rect.top - size/2;
-            
-            ripple.style.width = ripple.style.height = `${size}px`;
-            ripple.style.left = `${x}px`;
-            ripple.style.top = `${y}px`;
-            
-            setTimeout(() => {
-                ripple.remove();
-            }, 600);
-        }
-        
-        // Load tool content
-        function loadTool(tool) {
-            tsklytlmodalBody.innerHTML = '';
+    }
+    
+    // Load tool content
+    function loadTool(tool) {
+        tsklytlmodalBody.innerHTML = '';
             
             switch(tool) {
                 case 'emi':
@@ -3082,6 +3067,7 @@
                 });
             });
 
-            // Show initial emoji
             displayRandomEmoji();
         }
+    });
+});

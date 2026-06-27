@@ -1,10 +1,9 @@
-const basePath = ''; // set if needed
+const basePath = '';
 
 function initStickyHeader() {
   const header = document.getElementById('main-header');
   if (!header) return;
 
-  // Offset for body padding
   function setOffset() {
     const h = header.offsetHeight || 72;
     document.documentElement.style.setProperty('--header-h', h + 'px');
@@ -24,9 +23,9 @@ function initStickyHeader() {
     else header.classList.remove('is-stuck');
 
     if (y > 80 && goingDown) {
-      header.classList.add('is-hidden'); // hide on scroll down
+      header.classList.add('is-hidden');
     } else {
-      header.classList.remove('is-hidden'); // show on scroll up
+      header.classList.remove('is-hidden');
     }
 
     lastY = y <= 0 ? 0 : y;
@@ -42,33 +41,24 @@ function initStickyHeader() {
 }
 
 function initNavbarInteractions() {
-  const searchIcon = document.getElementById("searchIcon");
-  const searchForm = document.getElementById("searchForm");
-  const navbarToggler = document.querySelector(".navbar-toggler");
-  const navbarMenu = document.getElementById("navbarSupportedContent");
   const myBtn = document.getElementById("myBtn");
 
-  // Mobile menu toggle
-  navbarToggler?.addEventListener("click", function() {
-    navbarMenu?.classList.toggle("show");
-  });
-
-  // Scroll-to-top button
-  function scrollFunction() {
-    if (document.documentElement.scrollTop > 20) {
-      myBtn.style.display = "block";
-    } else {
-      myBtn.style.display = "none";
+  if (myBtn) {
+    function scrollFunction() {
+      if (document.documentElement.scrollTop > 20) {
+        myBtn.style.display = "block";
+      } else {
+        myBtn.style.display = "none";
+      }
     }
+
+    myBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    window.addEventListener("scroll", scrollFunction);
   }
 
-  myBtn?.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-
-  window.addEventListener("scroll", scrollFunction);
-
-  // Smooth scroll for anchors
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
@@ -80,18 +70,18 @@ function initNavbarInteractions() {
   });
 }
 
-// Load navbar, then init scripts
 fetch(basePath + "/navbar.html")
   .then(r => r.text())
   .then(html => {
     document.getElementById("navbar-container").innerHTML = html;
-
-    initStickyHeader();       // sticky + scroll behavior
-    initNavbarInteractions(); // search toggle + mobile toggle + scroll-to-top
+    initStickyHeader();
+    initNavbarInteractions();
   })
   .catch(err => console.error("Error loading navbar:", err));
 
-  // Search toggle
-  document.getElementById("searchIcon").addEventListener("click", function() {
-    window.location.href = "search.html"; // works everywhere
-});
+const searchIcon = document.getElementById("searchIcon");
+if (searchIcon) {
+  searchIcon.addEventListener("click", function() {
+    window.location.href = "search.html";
+  });
+}

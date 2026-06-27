@@ -1,35 +1,35 @@
 //custom JavaScript here
 
-document.getElementById('searchIcon').addEventListener('click', function(e) {
-    e.preventDefault();
+document.addEventListener('DOMContentLoaded', function() {
+    var searchIcon = document.getElementById('searchIcon');
     var searchForm = document.getElementById('searchForm');
-    if (searchForm.style.display === 'none' || searchForm.style.display === '') {
-        searchForm.style.display = 'block';
-    } else {
-        searchForm.style.display = 'none';
+    var navbarToggler = document.querySelector('.navbar-toggler');
+    var navbar = document.getElementById('navbarSupportedContent');
+
+    if (searchIcon && searchForm) {
+        searchIcon.addEventListener('click', function(e) {
+            e.preventDefault();
+            searchForm.classList.toggle('show');
+        });
+    }
+
+    if (navbarToggler && navbar) {
+        navbarToggler.addEventListener('click', function() {
+            navbar.classList.toggle('show');
+            var expanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !expanded);
+        });
     }
 });
 
-document.getElementById('searchIcon').addEventListener('click', function(e) {
+var searchIcon2 = document.getElementById('searchIcon');
+if (searchIcon2) {
+    searchIcon2.addEventListener('click', function(e) {
         e.preventDefault();
         var searchForm = document.getElementById('searchForm');
-        if (searchForm.classList.contains('show')) {
-            searchForm.classList.remove('show');
-        } else {
-            searchForm.classList.add('show');
-        }
+        if (searchForm) searchForm.classList.toggle('show');
     });
-
-    document.querySelector('.navbar-toggler').addEventListener('click', function() {
-        var navbar = document.getElementById('navbarSupportedContent');
-        navbar.classList.toggle('show'); // Toggle class to show/hide navbar
-    });
-    
-    document.getElementById('searchIcon').addEventListener('click', function(e) {
-        e.preventDefault();
-        var searchForm = document.getElementById('searchForm');
-        searchForm.classList.toggle('show'); // Toggle search form visibility
-    });
+}
     
 
     // Scroll to Top Button

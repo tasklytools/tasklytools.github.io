@@ -1,11 +1,4 @@
 /*=====================================================================================
-    Custom CSS Stylesheet
-    Author: [Your Name]
-    Description: Custom styles for layout, header, navigation, scroll to top button,
-                 search form, logo, and article content.
-======================================================================================*/
-
-/*=====================================================================================
     1. Core Wrap CSS
 ======================================================================================*/
 :root{
@@ -440,18 +433,19 @@ div#navbarSupportedContent ul li ul li a:hover {
 
   .navbar-toggler {
     border: none;
-  }  
-  /* Optional: Tweak the button itself */
-  .navbar-toggler {
-    border: none; /* remove default border */
+}
+.navbar-toggler {
+    border: none;
     padding: 0.25rem 0.5rem;
-  }
-  
-  /* Optional: Add hover effect */
-  .navbar-toggler:hover {
+}
+.navbar-toggler i {
+    font-size: 32px;
+    color: #000;
+}
+.navbar-toggler:hover {
     opacity: 0.8;
     transition: opacity 0.3s;
-  }
+}
   
   
 div#myLinks a {
@@ -603,6 +597,8 @@ div#myLinks li {
     visibility: visible;
     background-color: #fff !important;
     margin: 0;
+    right: 0;
+    left: auto;
 }
 
 .navbar-nav .dropdown > a::after {
@@ -962,6 +958,7 @@ a.page-numbers:hover {
     font-weight: bold;
     border-radius: 4px;
 }
+
 /*=====================================================================================
     8. Content & Article CSS
 ======================================================================================*/
@@ -1208,6 +1205,17 @@ a#searchIcon:hover i {
     width: 100%;
 }
 /* FAQ Widget Area End*/
+
+/*=====================================================================================
+    11. Common Website Problem Section CSS
+======================================================================================*/
+.custom-radius {
+    border-radius: 15px;
+    border: 1px solid transparent;
+    padding: 20px;
+    background: #f3f3f3;
+    transition: border-color 0.3s ease-in-out;
+}
 /*=====================================================================================
     11. Footer CSS
 ======================================================================================*/
@@ -1215,6 +1223,12 @@ footer {
     background: #333;
     color: #fff;
     padding: 1rem 0;
+}
+.wp-block-columns.top-footer {
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-start;
+    align-items: stretch;
 }
 div#default-footer a {
     color: #fff;
@@ -1433,6 +1447,7 @@ footer.comment-meta a:hover {
         margin: 0;
         flex-direction: column;
         width: 100%;
+        background: #fff;
     }
 
     .nav-item {
@@ -1444,21 +1459,7 @@ footer.comment-meta a:hover {
         text-align: center;
     }
 
-    .navbar-toggler {
-        margin-left: auto;
-    }
-
-    button.navbar-toggler {
-        display: block;
-    }
-
-    div#navbarSupportedContent {
-        display: none;
-        border-top: 1px solid #000;
-    }
-
     .navbar-collapse li {
-        padding: 5px 0;
     }
 
     /* Navbar container */
@@ -1590,4 +1591,16 @@ footer.comment-meta a:hover {
 }
 /*------------------------------------------------------
                 Media Queries 650px End
-------------------------------------------------------*/
+ ------------------------------------------------------*/
+
+/* Mobile navbar behavior */
+@media (max-width: 991px) {
+    #navbarToggler { display: block !important; }
+    #navbarSupportedContent { display: none !important; }
+    #navbarSupportedContent.show { display: block !important; }
+}
+
+@media (min-width: 992px) {
+    #navbarToggler { display: none !important; }
+    #navbarSupportedContent { display: flex !important; }
+}

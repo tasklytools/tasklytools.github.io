@@ -167,9 +167,9 @@
         <footer class="container-fluid footer-section pt-5 pb-3">
             <div id="footer-container"></div>
         </footer>
-		<script src="/wp-content/themes/aj-square/assets/js/bootstrap.bundle.min83b6.js?ver=4.6.2" id="bootstrap-js-js" defer></script>
-		<script src="/wp-content/themes/aj-square/assets/js/taskly.scriptf269.js?ver=1.0.1" id="Taskly-Tools-script-js" defer></script>
-		<script src="/wp-content/themes/aj-square/assets/js/scriptf488.js?ver=1.1.0" id="aj-square-script-js" defer></script>
+		<script src="/wp-content/themes/aj-square/assets/js/bootstrap.bundle.min.js?ver=4.6.2" id="bootstrap-js-js" defer></script>
+		<script src="/wp-content/themes/aj-square/assets/js/taskly.script.js?ver=1.0.1" id="Taskly-Tools-script-js" defer></script>
+		<script src="/wp-content/themes/aj-square/assets/js/script.js?ver=1.1.0" id="aj-square-script-js" defer></script>
 
 		<script src="/wp-content/plugins/google-site-kit/dist/assets/js/googlesitekit-events-provider-wpforms-3b23b71ea60c39fa1552.js" id="googlesitekit-events-provider-wpforms-js" defer></script>
 		<script src="/footer-script.js" defer></script>

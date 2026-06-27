@@ -1,56 +1,34 @@
-<nav class="navbar navbar-expand-lg navbar-dark w-100">
-                <div class='container-fluid '>
-
-                    <!-- Logo -->
-                    <a class="navbar-brand custom-logo-widget" href="https://tasklytools.org/">
-                        <img src="/wp-content/uploads/2025/05/taskly-tools.png" alt="Pixel Radar Online" width="125" height="125">
-                    </a>
-
-
-                    <!-- Toggle Button for Mobile -->
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <label class="css-toggle-wrapper">
-                            <i class="bi bi-list"></i>
-                        </label>
-                    </button>
-
-                    <!-- Collapsible Menu -->
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <div class="d-flex flex-wrap flex-grow-1 align-items-center nav-color">
-                            <!-- Menu -->
-                            <ul id="menu-primary" class="navbar-nav ms-auto" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
-                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-9 current_page_item"><a href="https://tasklytools.org/" class="nav-link">Home</a></li>
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home"><a href="https://tasklytools.org/#EntertainmentTools" class="nav-link">Love & Logic</a></li>
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home"><a href="https://tasklytools.org/#enttools" class="nav-link">Entertainment</a></li>
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home"><a href="https://tasklytools.org/#EssentialImageTools" class="nav-link">Image</a></li>
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home"><a href="https://tasklytools.org/#popularpdftools" class="nav-link">PDF</a></li>
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home"><a href="https://tasklytools.org/#financialtools" class="nav-link">Finance</a></li>
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home"><a href="https://tasklytools.org/#text-tools" class="nav-link">Text</a></li>
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home"><a href="https://tasklytools.org/#security-tools" class="nav-link">Security</a></li>
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home"><a href="https://tasklytools.org/#utility-tools" class="nav-link">Utility</a></li>
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home"><a href="https://tasklytools.org/#lifestyletools" class="nav-link">Lifestyle</a></li>
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home"><a href="https://tasklytools.org/#funandgametools" class="nav-link">Fun & Games</a></li>
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown"><a href="#" class="nav-link" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Blog</a>
-                                    <ul class="dropdown-menu" >
-                                        <li class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="https://tasklytools.org/category/free-tools" class="nav-link">Free Tools</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            <!-- Search -->
-                            <div class="nav-item nav-search">
-                                <a class="nav-link" href="/search.html" id="searchIcon" aria-label="Search">
-                                    <i class="bi bi-search"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-            <!-- Search Form (Hidden by Default) -->
-            <div class="nav-item" id="searchForm" style="display: none;">
-                <form role="search" method="get" class="search-form" action="https://tasklytools.org/">
-                    <input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
-                    <button type="submit" class="search-submit"><i class="bi bi-search"></i></button>
-                </form>
+<nav class="navbar navbar-expand-lg navbar-dark w-100" style="position:relative;z-index:9999;">
+    <div class="container-fluid">
+        <a class="navbar-brand custom-logo-widget" href="https://tasklytools.org/">
+            <img src="/wp-content/uploads/2025/05/taskly-tools.png" alt="Pixel Radar Online" width="125" height="125">
+        </a>
+        <button class="navbar-toggler" type="button" id="navbarToggler" aria-label="Toggle navigation" onclick="document.getElementById('navbarSupportedContent').classList.toggle('show');">
+            <i class="bi bi-list"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul id="menu-primary" class="navbar-nav ms-auto" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-9 current_page_item"><a href="https://tasklytools.org/" class="nav-link">Home</a></li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home"><a href="https://tasklytools.org/security-tools" class="nav-link">Security Tools</a></li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home"><a href="https://tasklytools.org/fix-website" class="nav-link">Fix Website</a></li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home"><a href="https://tasklytools.org/utility-tools" class="nav-link">Utility Tools</a></li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown"><a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Blog</a>
+                    <ul class="dropdown-menu">
+                        <li class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="https://tasklytools.org/category/free-tools" class="nav-link">Free Tools</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="nav-item nav-search">
+                <a class="nav-link" href="/search.html" id="searchIcon" aria-label="Search">
+                    <i class="bi bi-search"></i>
+                </a>
             </div>
+        </div>
+    </div>
+    <div class="nav-item" id="searchForm" style="display: none;">
+        <form role="search" method="get" class="search-form" action="https://tasklytools.org/">
+            <input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+            <button type="submit" class="search-submit"><i class="bi bi-search"></i></button>
+        </form>
+    </div>
+</nav>
