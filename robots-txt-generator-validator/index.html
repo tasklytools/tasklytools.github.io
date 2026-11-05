@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Create and validate robots.txt files with per-bot rules, common presets, sitemap URLs, crawl-delay checks, and clear syntax warnings. Free and browser-based.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <title>Robots.txt Generator &amp; Validator - Taskly Tools</title>
+    <link rel="canonical" href="https://tasklytools.org/robots-txt-generator-validator/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Robots.txt Generator &amp; Validator - Taskly Tools">
+    <meta property="og:url" content="https://tasklytools.org/robots-txt-generator-validator/">
+    <meta property="og:site_name" content="Taskly Tools">
+    <meta property="og:image" content="https://tasklytools.org/wp-content/uploads/2025/05/taskly-tools-1.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/wp-content/themes/aj-square/style.css?ver=1.0.0">
+    <link rel="stylesheet" href="/wp-content/themes/aj-square/assets/css/style.css?ver=1.0.0">
+    <link rel="stylesheet" href="/wp-content/themes/aj-square/assets/css/bootstrap.min.css?ver=4.6.2">
+    <link rel="stylesheet" href="/wp-content/themes/aj-square/assets/bootstrap-icons/bootstrap-icons95a1.css?ver=1.10.5">
+    <link rel="stylesheet" href="/assets/tools/toolkit.css?ver=1.0.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+
+    <link rel="icon" href="/wp-content/uploads/2025/05/cropped-favicon-1-32x32.png" sizes="32x32">
+    <link rel="icon" href="/wp-content/uploads/2025/05/cropped-favicon-1-192x192.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/wp-content/uploads/2025/05/cropped-favicon-1-180x180.png">
+  </head>
+  <body class="tt-tool-body wp-singular page-template page-template-template-customblock page-template-template-customblock-php page wp-theme-aj-square">
+    <a class="tt-skip-link" href="#tool">Skip to tool</a>
+    <div id="pre-load-animation"></div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+    <header class="container-fluid sticky-top" id="main-header">
+      <div id="navbar-container"></div>
+    </header>
+
+    <main id="tool" class="container tt-page">
+      <div class="tt-hero">
+        <nav class="tt-breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/utility-tools/">Utility Tools</a>
+          <span aria-hidden="true">/</span>
+          <span>Robots.txt Generator &amp; Validator</span>
+        </nav>
+        <h1>Robots.txt Generator &amp; Validator</h1>
+        <p>Create crawler rules for the whole site or specific bots, add a sitemap, and check an existing robots.txt file for syntax problems. Nothing is uploaded.</p>
+      </div>
+
+      <div class="tt-tabs" role="tablist" aria-label="Robots.txt tool views">
+        <button type="button" class="tt-tab" id="tabGenerate" role="tab" aria-selected="true" aria-controls="panelGenerate" tabindex="0">
+          <i class="bi bi-sliders" aria-hidden="true"></i>
+          Generate
+        </button>
+        <button type="button" class="tt-tab" id="tabValidate" role="tab" aria-selected="false" aria-controls="panelValidate" tabindex="-1">
+          <i class="bi bi-check2-square" aria-hidden="true"></i>
+          Validate
+        </button>
+      </div>
+
+      <section id="panelGenerate" role="tabpanel" aria-labelledby="tabGenerate">
+        <div class="tt-layout">
+          <div class="tt-stack">
+            <section class="tt-card" aria-labelledby="robots-settings-title">
+              <div class="tt-card-head">
+                <div>
+                  <h2 id="robots-settings-title">Robots.txt rules</h2>
+                  <p class="tt-help">Start with a preset or build per-bot groups. The output updates as you edit.</p>
+                </div>
+              </div>
+
+              <div class="tt-form-row">
+                <label class="tt-label" for="robotsPreset">Preset</label>
+                <select class="tt-select" id="robotsPreset">
+                  <option value="allow-all">Allow all crawlers</option>
+                  <option value="block-all">Block all crawlers (staging)</option>
+                  <option value="block-ai">Allow search, block AI crawlers</option>
+                  <option value="custom">Custom rules</option>
+                </select>
+                <p class="tt-help">Presets replace the groups below. Choosing Custom keeps your current groups.</p>
+              </div>
+
+              <div id="robotsGroups" class="tt-stack"></div>
+
+              <div class="tt-btn-row">
+                <button type="button" class="tt-btn tt-btn-secondary" id="addBotGroupBtn">
+                  <i class="bi bi-plus-lg" aria-hidden="true"></i>
+                  Add bot group
+                </button>
+              </div>
+
+              <div class="tt-form-row tt-mt-2">
+                <label class="tt-label" for="sitemapUrl">Sitemap URL (optional)</label>
+                <input class="tt-input" type="url" id="sitemapUrl" placeholder="https://example.com/sitemap.xml" autocomplete="off" spellcheck="false">
+                <p class="tt-help">Use an absolute http:// or https:// URL. The Sitemap directive is added after the user-agent groups.</p>
+              </div>
+
+              <p class="tt-status tt-status--neutral" id="robotsStatus" role="status" aria-live="polite">
+                Add a user-agent group or sitemap URL to generate robots.txt.
+              </p>
+
+              <div class="tt-hidden tt-mt-2" id="robotsErrors">
+                <h3>Errors</h3>
+                <ul class="tt-messages" id="robotsErrorList"></ul>
+              </div>
+
+              <div class="tt-hidden tt-mt-2" id="robotsWarnings">
+                <h3>Warnings</h3>
+                <ul class="tt-messages" id="robotsWarningList"></ul>
+              </div>
+
+              <div class="tt-btn-row">
+                <button type="button" class="tt-btn tt-btn-secondary" id="resetRobotsBtn">
+                  <i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i>
+                  Reset
+                </button>
+              </div>
+            </section>
+          </div>
+
+          <div class="tt-stack">
+            <section class="tt-card" aria-labelledby="robots-output-title">
+              <div class="tt-card-head">
+                <div>
+                  <h2 id="robots-output-title">Generated robots.txt</h2>
+                  <p class="tt-help">Upload the file to your site root, usually at /robots.txt.</p>
+                </div>
+                <span class="tt-chip" id="robotsRuleCount">0 groups / 0 rules</span>
+              </div>
+
+              <div class="tt-output tt-hidden" id="robotsOutputWrap">
+                <pre id="robotsOutput"></pre>
+              </div>
+              <p class="tt-empty" id="robotsEmpty">No rules generated yet.</p>
+
+              <div class="tt-btn-row">
+                <button type="button" class="tt-btn tt-btn-primary" id="copyRobotsBtn" disabled>
+                  <i class="bi bi-clipboard" aria-hidden="true"></i>
+                  Copy robots.txt
+                </button>
+                <button type="button" class="tt-btn tt-btn-secondary" id="downloadRobotsBtn" disabled>
+                  <i class="bi bi-download" aria-hidden="true"></i>
+                  Download
+                </button>
+                <button type="button" class="tt-btn tt-btn-secondary" id="validateRobotsOutputBtn" disabled>
+                  <i class="bi bi-check2-square" aria-hidden="true"></i>
+                  Validate output
+                </button>
+              </div>
+            </section>
+
+            <section class="tt-card">
+              <div class="tt-card-head">
+                <h2>What the generated file does</h2>
+              </div>
+              <ul>
+                <li><strong>User-agent groups</strong> apply rules to one crawler or to <code>*</code> for all crawlers.</li>
+                <li><strong>Allow and Disallow</strong> paths support <code>*</code> wildcards and <code>$</code> end-of-URL anchors.</li>
+                <li><strong>Presets</strong> can allow everything, block a staging site, or block a list of common AI crawlers.</li>
+                <li><strong>Sitemap</strong> tells crawlers where to find your sitemap, but it does not grant access.</li>
+              </ul>
+              <p class="tt-privacy"><strong>Private by design:</strong> the generator and validator run locally in your browser. No robots.txt content is sent to a server.</p>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section id="panelValidate" class="tt-hidden" role="tabpanel" aria-labelledby="tabValidate">
+        <div class="tt-layout tt-layout--even">
+          <section class="tt-card" aria-labelledby="validator-title">
+            <div class="tt-card-head">
+              <div>
+                <h2 id="validator-title">Validate robots.txt</h2>
+                <p class="tt-help">Paste a file to check structure, directives, paths, and sitemap URLs.</p>
+              </div>
+            </div>
+
+            <div class="tt-form-row">
+              <label class="tt-label" for="robotsInput">robots.txt content</label>
+              <textarea class="tt-textarea tt-codearea" id="robotsInput" spellcheck="false" placeholder="User-agent: *&#10;Disallow: /wp-admin/&#10;Allow: /wp-admin/admin-ajax.php&#10;&#10;Sitemap: https://example.com/sitemap.xml"></textarea>
+            </div>
+
+            <div class="tt-btn-row">
+              <button type="button" class="tt-btn tt-btn-primary" id="validateRobotsBtn">
+                <i class="bi bi-check2-square" aria-hidden="true"></i>
+                Validate robots.txt
+              </button>
+            </div>
+
+            <p class="tt-status tt-status--neutral tt-mt-2" id="validationStatus" role="status" aria-live="polite">
+              Paste a robots.txt file or validate the generated output.
+            </p>
+          </section>
+
+          <section class="tt-card" aria-labelledby="validation-results-title">
+            <div class="tt-card-head">
+              <div>
+                <h2 id="validation-results-title">Validation results</h2>
+                <p class="tt-help" id="validationSummary"></p>
+              </div>
+            </div>
+
+            <div class="tt-metric-grid">
+              <div class="tt-metric">
+                <span class="tt-metric-label">Groups</span>
+                <span class="tt-metric-value" id="statGroups">0</span>
+              </div>
+              <div class="tt-metric">
+                <span class="tt-metric-label">Rules</span>
+                <span class="tt-metric-value" id="statRules">0</span>
+              </div>
+              <div class="tt-metric">
+                <span class="tt-metric-label">Sitemaps</span>
+                <span class="tt-metric-value" id="statSitemaps">0</span>
+              </div>
+              <div class="tt-metric">
+                <span class="tt-metric-label">Lines</span>
+                <span class="tt-metric-value" id="statLines">0</span>
+              </div>
+            </div>
+
+            <ul class="tt-messages tt-mt-2" id="validationIssues"></ul>
+            <p class="tt-empty tt-mt-2" id="validationEmpty">No validation results yet.</p>
+          </section>
+        </div>
+      </section>
+
+      <div class="tt-content">
+        <h2>What robots.txt can and cannot do</h2>
+        <p>Robots.txt is a crawler instruction file, not an access-control system. It can ask well-behaved crawlers not to fetch certain paths, but it cannot prevent a person or a rogue bot from requesting a public URL. Do not use robots.txt to hide passwords, private customer data, admin panels, or anything that must stay confidential. Protect those resources with authentication and server-side permissions.</p>
+
+        <h2>User-agent groups and rule order</h2>
+        <p>A group starts with one or more <code>User-agent</code> lines and is followed by <code>Allow</code>, <code>Disallow</code>, or <code>Crawl-delay</code> rules. The wildcard <code>*</code> matches every crawler without a more specific group. Crawlers choose the most specific matching rule; when an Allow and a Disallow rule are equally specific, the more permissive rule is commonly used. Keep groups simple and test the result in the validator.</p>
+
+        <h2>Common robots.txt mistakes</h2>
+        <ul>
+          <li><code>Noindex</code> is not a robots.txt directive. Use a meta robots tag or an <code>X-Robots-Tag</code> HTTP header.</li>
+          <li>A sitemap URL must be absolute and must point to an actual sitemap file.</li>
+          <li>Blocking JavaScript, CSS, or image paths can prevent search engines from rendering and understanding pages correctly.</li>
+          <li>Blocking every crawler while also submitting a sitemap is usually contradictory.</li>
+          <li>Crawl-delay is not supported by Google, even though some other crawlers honor it.</li>
+        </ul>
+
+        <h2>Deploying robots.txt</h2>
+        <p>Upload the file to the root of your domain so it is available at <code>https://example.com/robots.txt</code>. Do not place it in a subdirectory unless that directory is the site root. After deployment, open the URL directly, confirm that it returns a 200 response with the expected text, and validate the live file again if you made changes.</p>
+
+        <h2>Related tools</h2>
+        <div class="tt-related">
+          <a href="/htaccess-redirect-generator/"><i class="bi bi-signpost-split" aria-hidden="true"></i> HTACCESS Redirect Generator</a>
+          <a href="/base64-encoder-decoder/"><i class="bi bi-code-slash" aria-hidden="true"></i> Base64 Encoder &amp; Decoder</a>
+          <a href="/password-strength-checker/"><i class="bi bi-shield-lock" aria-hidden="true"></i> Password Strength Checker</a>
+          <a href="/tools/redirect-checker/"><i class="bi bi-signpost-2" aria-hidden="true"></i> Redirect Checker</a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="container-fluid footer-section pt-5 pb-3">
+      <div id="footer-container"></div>
+    </footer>
+
+    <script src="/footer-script.js" defer></script>
+    <script src="/nav.js" defer></script>
+    <script src="/wp-content/themes/aj-square/assets/js/script.js?ver=1.1.0" defer></script>
+    <script src="/wp-content/themes/aj-square/assets/js/bootstrap.bundle.min.js?ver=4.6.2" defer></script>
+    <script src="/assets/tools/toolkit.js?ver=1.0.0" defer></script>
+    <script src="/robots-txt-generator-validator/logic.js?ver=1.0.0" defer></script>
+    <script src="/robots-txt-generator-validator/app.js?ver=1.0.0" defer></script>
+  </body>
+</html>

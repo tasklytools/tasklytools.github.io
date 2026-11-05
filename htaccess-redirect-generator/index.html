@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Generate safe Apache .htaccess redirect rules for HTTPS, www or non-www canonical hosts, legacy paths, wildcards, and trailing slashes. Free and browser-based.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <title>HTACCESS Redirect Generator - Taskly Tools</title>
+    <link rel="canonical" href="https://tasklytools.org/htaccess-redirect-generator/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="HTACCESS Redirect Generator - Taskly Tools">
+    <meta property="og:url" content="https://tasklytools.org/htaccess-redirect-generator/">
+    <meta property="og:site_name" content="Taskly Tools">
+    <meta property="og:image" content="https://tasklytools.org/wp-content/uploads/2025/05/taskly-tools-1.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/wp-content/themes/aj-square/style.css?ver=1.0.0">
+    <link rel="stylesheet" href="/wp-content/themes/aj-square/assets/css/style.css?ver=1.0.0">
+    <link rel="stylesheet" href="/wp-content/themes/aj-square/assets/css/bootstrap.min.css?ver=4.6.2">
+    <link rel="stylesheet" href="/wp-content/themes/aj-square/assets/bootstrap-icons/bootstrap-icons95a1.css?ver=1.10.5">
+    <link rel="stylesheet" href="/assets/tools/toolkit.css?ver=1.0.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+
+    <link rel="icon" href="/wp-content/uploads/2025/05/cropped-favicon-1-32x32.png" sizes="32x32">
+    <link rel="icon" href="/wp-content/uploads/2025/05/cropped-favicon-1-192x192.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/wp-content/uploads/2025/05/cropped-favicon-1-180x180.png">
+  </head>
+  <body class="tt-tool-body wp-singular page-template page-template-template-customblock page-template-template-customblock-php page wp-theme-aj-square">
+    <a class="tt-skip-link" href="#tool">Skip to tool</a>
+    <div id="pre-load-animation"></div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+    <header class="container-fluid sticky-top" id="main-header">
+      <div id="navbar-container"></div>
+    </header>
+
+    <main id="tool" class="container tt-page">
+      <div class="tt-hero">
+        <nav class="tt-breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/utility-tools/">Utility Tools</a>
+          <span aria-hidden="true">/</span>
+          <span>HTACCESS Redirect Generator</span>
+        </nav>
+        <h1>HTACCESS Redirect Generator</h1>
+        <p>Build Apache redirect rules for HTTPS, a canonical www or non-www hostname, legacy paths, wildcard redirects, and trailing slashes. Everything runs in your browser.</p>
+      </div>
+
+      <div class="tt-layout">
+        <div class="tt-stack">
+          <section class="tt-card" aria-labelledby="htaccess-settings-title">
+            <div class="tt-card-head">
+              <div>
+                <h2 id="htaccess-settings-title">Redirect settings</h2>
+                <p class="tt-help">Choose the rules you need. The output updates as you type.</p>
+              </div>
+            </div>
+
+            <form id="htaccessForm" novalidate>
+              <fieldset class="tt-fieldset">
+                <legend>HTTPS and canonical hostname</legend>
+
+                <div class="tt-form-row">
+                  <label class="tt-check" for="forceHttps">
+                    <input type="checkbox" id="forceHttps" checked>
+                    <span>
+                      Force HTTPS
+                      <small>Redirect HTTP requests to HTTPS with a 301 by default.</small>
+                    </span>
+                  </label>
+                </div>
+
+                <div class="tt-form-grid">
+                  <div class="tt-form-row">
+                    <label class="tt-label" for="canonicalMode">Canonical hostname</label>
+                    <select class="tt-select" id="canonicalMode">
+                      <option value="none">Do not change the hostname</option>
+                      <option value="add-www">Add www.</option>
+                      <option value="remove-www">Remove www.</option>
+                    </select>
+                  </div>
+
+                  <div class="tt-form-row">
+                    <label class="tt-label" for="canonicalStatus">Canonical redirect status</label>
+                    <select class="tt-select" id="canonicalStatus">
+                      <option value="301">301 Permanent</option>
+                      <option value="302">302 Temporary</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="tt-form-row tt-hidden" id="canonicalHostRow">
+                  <label class="tt-label" for="canonicalHost">Canonical hostname</label>
+                  <input class="tt-input" type="text" id="canonicalHost" placeholder="www.example.com" autocomplete="off" spellcheck="false">
+                  <p class="tt-help">Enter only the hostname, without https:// or a path. Use www.example.com for Add WWW, or example.com for Remove WWW.</p>
+                </div>
+              </fieldset>
+
+              <fieldset class="tt-fieldset">
+                <legend>Legacy path redirects</legend>
+
+                <div class="tt-form-row">
+                  <label class="tt-check" for="customRedirectsEnabled">
+                    <input type="checkbox" id="customRedirectsEnabled">
+                    <span>
+                      Add custom path redirects
+                      <small>Redirect old URLs to new paths or absolute http(s) URLs.</small>
+                    </span>
+                  </label>
+                </div>
+
+                <div id="customRedirectsSection" class="tt-hidden">
+                  <div class="tt-rows" id="redirectRows"></div>
+                  <div class="tt-btn-row tt-mt-1">
+                    <button type="button" class="tt-btn tt-btn-secondary" id="addRedirectBtn">
+                      <i class="bi bi-plus-lg" aria-hidden="true"></i>
+                      Add redirect
+                    </button>
+                  </div>
+
+                  <div class="tt-form-row tt-mt-1">
+                    <label class="tt-check" for="preserveQueries">
+                      <input type="checkbox" id="preserveQueries" checked>
+                      <span>
+                        Preserve query strings
+                        <small>Keep parameters such as ?utm_source=newsletter on these custom redirects.</small>
+                      </span>
+                    </label>
+                  </div>
+
+                  <p class="tt-help">Use <code>*</code> in the old path to capture a value and <code>$1</code> in the destination to reuse it. Use 301 for permanent moves and 302 for temporary ones.</p>
+                </div>
+              </fieldset>
+
+              <fieldset class="tt-fieldset">
+                <legend>Trailing slashes</legend>
+                <div class="tt-form-row">
+                  <label class="tt-label" for="trailingSlash">Normalize trailing slashes</label>
+                  <select class="tt-select" id="trailingSlash">
+                    <option value="none">Do not change trailing slashes</option>
+                    <option value="add">Add a trailing slash</option>
+                    <option value="remove">Remove the trailing slash</option>
+                  </select>
+                  <p class="tt-help">Existing files and directories are skipped. This option is intended for clean URL structures.</p>
+                </div>
+              </fieldset>
+
+              <p class="tt-status tt-status--neutral" id="htaccessStatus" role="status" aria-live="polite">
+                Choose at least one redirect rule to generate an .htaccess snippet.
+              </p>
+
+              <div class="tt-hidden tt-mt-2" id="htaccessErrors">
+                <h3>Errors</h3>
+                <ul class="tt-messages" id="htaccessErrorList"></ul>
+              </div>
+
+              <div class="tt-hidden tt-mt-2" id="htaccessWarnings">
+                <h3>Warnings</h3>
+                <ul class="tt-messages" id="htaccessWarningList"></ul>
+              </div>
+
+              <div class="tt-btn-row">
+                <button type="button" class="tt-btn tt-btn-secondary" id="resetHtaccessBtn">
+                  <i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i>
+                  Reset
+                </button>
+              </div>
+            </form>
+          </section>
+
+          <div class="tt-warning-box">
+            <strong>Back up first.</strong> Apache redirect mistakes can take a site offline. Save your current <code>.htaccess</code> file, review the generated rules on a staging site, and keep the WordPress block intact if you use WordPress.
+          </div>
+        </div>
+
+        <div class="tt-stack">
+          <section class="tt-card" aria-labelledby="htaccess-output-title">
+            <div class="tt-card-head">
+              <div>
+                <h2 id="htaccess-output-title">Generated .htaccess rules</h2>
+                <p class="tt-help">Paste this snippet above the WordPress block in your .htaccess file.</p>
+              </div>
+              <span class="tt-chip" id="htaccessRuleCount">0 rules</span>
+            </div>
+
+            <div class="tt-output tt-hidden" id="htaccessOutputWrap">
+              <pre id="htaccessOutput"></pre>
+            </div>
+            <p class="tt-empty" id="htaccessEmpty">No rules generated yet.</p>
+
+            <div class="tt-btn-row">
+              <button type="button" class="tt-btn tt-btn-primary" id="copyHtaccessBtn" disabled>
+                <i class="bi bi-clipboard" aria-hidden="true"></i>
+                Copy rules
+              </button>
+              <button type="button" class="tt-btn tt-btn-secondary" id="downloadHtaccessBtn" disabled>
+                <i class="bi bi-download" aria-hidden="true"></i>
+                Download .txt
+              </button>
+            </div>
+          </section>
+
+          <section class="tt-card">
+            <div class="tt-card-head">
+              <h2>How the generator works</h2>
+            </div>
+            <ul>
+              <li><strong>Source paths</strong> are matched without the leading slash inside <code>RewriteRule</code>, as Apache expects.</li>
+              <li><strong>Wildcards</strong> become numbered captures. A source such as <code>/old/*</code> can redirect to <code>/new/$1</code>.</li>
+              <li><strong>Redirect loops</strong>, duplicate sources, unsafe protocols, and invalid destinations are blocked.</li>
+              <li><strong>Query strings</strong> are preserved by default and can be dropped for the custom rules.</li>
+              <li><strong>Existing files and directories</strong> are skipped by trailing-slash normalization.</li>
+            </ul>
+            <p class="tt-privacy"><strong>Private by design:</strong> no URL, hostname, or redirect rule is uploaded. The generator runs entirely in your browser.</p>
+          </section>
+        </div>
+      </div>
+
+      <div class="tt-content">
+        <h2>Before you edit .htaccess</h2>
+        <p>Download a copy of the current file before making changes. If you use WordPress, place the generated rules above the <code># BEGIN WordPress</code> line and leave the existing WordPress block intact. After uploading the file, test the old URLs, the canonical hostname, and a few normal pages. If something breaks, restore your backup immediately.</p>
+
+        <h2>HTTPS, www, and redirect status codes</h2>
+        <p>A <strong>301</strong> redirect tells browsers and search engines that a move is permanent. A <strong>302</strong> redirect is temporary. Use 301 for a lasting HTTPS or hostname change and 302 only while testing or during a short-lived campaign. If a proxy or CDN terminates HTTPS before Apache, the <code>%{HTTPS}</code> variable may need to be adjusted for your hosting environment.</p>
+
+        <h2>Common mistakes to avoid</h2>
+        <ul>
+          <li>Do not create a rule that redirects a URL to itself; it causes a redirect loop.</li>
+          <li>Put specific redirects before broad wildcard rules so they remain reachable.</li>
+          <li>Do not redirect every request to a destination that is also redirected.</li>
+          <li>Keep the WordPress rewrite block in place instead of replacing it.</li>
+        </ul>
+
+        <h2>Related tools</h2>
+        <div class="tt-related">
+          <a href="/tools/redirect-checker/"><i class="bi bi-signpost-split" aria-hidden="true"></i> Redirect Checker</a>
+          <a href="/robots-txt-generator-validator/"><i class="bi bi-robot" aria-hidden="true"></i> Robots.txt Generator &amp; Validator</a>
+          <a href="/base64-encoder-decoder/"><i class="bi bi-code-slash" aria-hidden="true"></i> Base64 Encoder &amp; Decoder</a>
+          <a href="/password-strength-checker/"><i class="bi bi-shield-lock" aria-hidden="true"></i> Password Strength Checker</a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="container-fluid footer-section pt-5 pb-3">
+      <div id="footer-container"></div>
+    </footer>
+
+    <script src="/footer-script.js" defer></script>
+    <script src="/nav.js" defer></script>
+    <script src="/wp-content/themes/aj-square/assets/js/script.js?ver=1.1.0" defer></script>
+    <script src="/wp-content/themes/aj-square/assets/js/bootstrap.bundle.min.js?ver=4.6.2" defer></script>
+    <script src="/assets/tools/toolkit.js?ver=1.0.0" defer></script>
+    <script src="/htaccess-redirect-generator/logic.js?ver=1.0.0" defer></script>
+    <script src="/htaccess-redirect-generator/app.js?ver=1.0.0" defer></script>
+  </body>
+</html>

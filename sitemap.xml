@@ -88,5 +88,25 @@
     <priority>0.8</priority>
       <lastmod>2026-04-27</lastmod>
   </url>
+  <url>
+    <loc>https://tasklytools.org/htaccess-redirect-generator/</loc>
+    <priority>0.8</priority>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://tasklytools.org/robots-txt-generator-validator/</loc>
+    <priority>0.8</priority>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://tasklytools.org/base64-encoder-decoder/</loc>
+    <priority>0.8</priority>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://tasklytools.org/password-strength-checker/</loc>
+    <priority>0.8</priority>
+    <lastmod>2026-10-26</lastmod>
+  </url>
 
 </urlset>

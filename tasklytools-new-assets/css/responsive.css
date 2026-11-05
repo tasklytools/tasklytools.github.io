@@ -1,0 +1,155 @@
+/* TasklyTools responsive enhancements. Mobile-first; base styles live in main.css. */
+
+@media (min-width: 560px) {
+  .tt-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .tt-search-row {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .tt-search-row .tt-btn {
+    flex: 0 0 auto;
+  }
+
+  .tt-tool-grid,
+  .tt-category-grid,
+  .tt-value-grid,
+  .tt-template-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tt-steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .tt-related-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tt-form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tt-form-grid .tt-field--full {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 820px) {
+  .tt-hero-grid {
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+    gap: 2.5rem;
+  }
+
+  .tt-hero-panel {
+    padding: 1.15rem;
+  }
+
+  .tt-tool-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .tt-category-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .tt-value-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .tt-template-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .tt-newsletter-grid {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 2rem;
+  }
+
+  .tt-newsletter-form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
+
+  .tt-newsletter-form .tt-field {
+    flex: 1 1 220px;
+    margin-bottom: 0;
+  }
+
+  .tt-newsletter-form .tt-btn {
+    flex: 0 0 auto;
+  }
+
+  .tt-newsletter-form .tt-status,
+  .tt-newsletter-form .tt-newsletter-note {
+    flex-basis: 100%;
+  }
+
+  .tt-tool-layout {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    gap: 1.4rem;
+  }
+
+  .tt-output-panel {
+    position: sticky;
+    top: calc(var(--header-h, 80px) + 1rem);
+  }
+
+  .tt-directory-toolbar {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+  }
+
+  .tt-directory-toolbar .tt-search-field {
+    min-width: 280px;
+  }
+
+  .tt-related-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1080px) {
+  .tt-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .tt-hero {
+    padding-top: 5.25rem;
+    padding-bottom: 4rem;
+  }
+
+  .tt-hero h1 {
+    max-width: 15ch;
+  }
+
+  .tt-hero-panel {
+    padding: 1.35rem;
+  }
+}
+
+/* Keep the existing fixed header from covering in-page anchors. */
+.tt-new {
+  scroll-padding-top: calc(var(--header-h, 80px) + 1rem);
+}
+
+.tt-new [id] {
+  scroll-margin-top: calc(var(--header-h, 80px) + 1rem);
+}
+
+/* Avoid horizontal overflow from long campaign URLs and code samples. */
+.tt-main {
+  overflow-wrap: anywhere;
+}
+
+.tt-main .tt-compare-wrap,
+.tt-main .tt-output-box,
+.tt-main .tt-url-preview {
+  overflow-wrap: anywhere;
+}

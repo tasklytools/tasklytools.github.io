@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profit Calculator - Profit, Margin &amp; Break-Even - TasklyTools</title>
+  <meta name="description" content="Calculate gross profit, net profit, profit margin, estimated tax, and break-even revenue from your revenue and expenses. Free, browser-based, no signup.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://tasklytools.org/tools/profit-calculator/">
+  <meta name="theme-color" content="#0c1a2b">
+
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TasklyTools">
+  <meta property="og:title" content="Profit Calculator - Calculate Profit, Margin &amp; Break-Even">
+  <meta property="og:description" content="Turn revenue and expenses into clear profit, margin, and break-even numbers. Free and browser-based.">
+  <meta property="og:url" content="https://tasklytools.org/tools/profit-calculator/">
+  <meta property="og:image" content="https://tasklytools.org/wp-content/uploads/2025/09/ttls-hbanner-min.png">
+  <meta property="og:image:width" content="1536">
+  <meta property="og:image:height" content="1024">
+  <meta property="og:image:type" content="image/png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Profit Calculator - Calculate Profit, Margin &amp; Break-Even">
+  <meta name="twitter:description" content="Calculate profit, margin, tax, and break-even revenue from your numbers. Free and private.">
+  <meta name="twitter:image" content="https://tasklytools.org/wp-content/uploads/2025/09/ttls-hbanner-min.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/wp-content/themes/aj-square/style.css?ver=1.0.0">
+  <link rel="stylesheet" href="/wp-content/themes/aj-square/assets/css/style.css?ver=1.0.0">
+  <link rel="stylesheet" href="/wp-content/themes/aj-square/assets/css/bootstrap.min.css?ver=4.6.2">
+  <link rel="stylesheet" href="/wp-content/themes/aj-square/assets/bootstrap-icons/bootstrap-icons95a1.css?ver=1.10.5">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GT-MJWCNQXM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "GT-MJWCNQXM");
+  </script>
+  <script>
+    (function(w,d,s,l,i){
+      w[l]=w[l]||[];
+      w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P879KSTN');
+  </script>
+  <link rel="stylesheet" href="../../tasklytools-new-assets/css/design-system.css">
+  <link rel="stylesheet" href="../../tasklytools-new-assets/css/main.css">
+  <link rel="stylesheet" href="../../tasklytools-new-assets/css/responsive.css">
+  <link rel="stylesheet" href="../../tasklytools-new-assets/css/tools.css">
+
+  <link rel="icon" href="/wp-content/uploads/2025/05/cropped-favicon-1-32x32.png" sizes="32x32">
+  <link rel="icon" href="/wp-content/uploads/2025/05/cropped-favicon-1-192x192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/wp-content/uploads/2025/05/cropped-favicon-1-180x180.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://tasklytools.org/#organization",
+        "name": "TasklyTools",
+        "url": "https://tasklytools.org/",
+        "logo": "https://tasklytools.org/wp-content/uploads/2025/05/taskly-tools.png"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://tasklytools.org/#website",
+        "url": "https://tasklytools.org/",
+        "name": "TasklyTools",
+        "publisher": { "@id": "https://tasklytools.org/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://tasklytools.org/tools/profit-calculator/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tasklytools.org/" },
+          { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://tasklytools.org/tools/all/" },
+          { "@type": "ListItem", "position": 3, "name": "Profit Calculator", "item": "https://tasklytools.org/tools/profit-calculator/" }
+        ]
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://tasklytools.org/tools/profit-calculator/#app",
+        "name": "Profit Calculator",
+        "url": "https://tasklytools.org/tools/profit-calculator/",
+        "description": "Calculate gross profit, net profit, margins, estimated tax, and break-even revenue from revenue and business expenses.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Any browser",
+        "browserRequirements": "Requires JavaScript",
+        "isPartOf": { "@id": "https://tasklytools.org/#website" },
+        "publisher": { "@id": "https://tasklytools.org/#organization" },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://tasklytools.org/tools/profit-calculator/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the difference between gross profit and net profit?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Gross profit is revenue minus the cost of goods sold. Net profit before tax is revenue minus all expenses, including cost of goods sold, operating costs, marketing, and other costs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is profit margin calculated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Gross margin is gross profit divided by revenue. Net margin before tax is net profit before tax divided by revenue. Both are shown as percentages."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does break-even revenue mean?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Break-even revenue is the sales amount needed to cover fixed expenses after accounting for the cost of goods sold. This calculator divides operating, marketing, and other fixed expenses by the gross margin ratio. It cannot calculate break-even when the gross margin is zero or negative."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does the Profit Calculator include tax?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It applies the tax rate you enter to positive profit before tax. If profit before tax is zero or negative, no tax is subtracted. The result is an estimate, not tax advice."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my financial data stored?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The calculator runs locally in your browser. Your revenue and expense figures are not sent to a TasklyTools server."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use a different currency?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Choose a currency from the list and the result labels update. The calculator formats the numbers you enter; it does not convert between currencies."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="tt-new tt-tool-page">
+  <a class="tt-skip-link" href="#main-content">Skip to main content</a>
+  <div id="pre-load-animation"></div>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P879KSTN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+  <header class="container-fluid sticky-top" id="main-header">
+    <div id="navbar-container"></div>
+  </header>
+
+  <main id="main-content" class="tt-main">
+    <section class="tt-tool-hero">
+      <div class="tt-container">
+        <nav class="tt-breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/tools/all/">Tools</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Profit Calculator</span>
+        </nav>
+        <div class="tt-badge-row">
+          <span class="tt-badge tt-badge-live"><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Live tool</span>
+          <span class="tt-badge tt-badge-neutral">Free</span>
+          <span class="tt-badge tt-badge-neutral">No signup</span>
+          <span class="tt-badge tt-badge-neutral">Runs in your browser</span>
+        </div>
+        <h1>Profit Calculator</h1>
+        <p>See what your revenue actually keeps. Enter revenue and expenses to calculate gross profit, net profit, margins, estimated tax, and the revenue needed to break even.</p>
+      </div>
+    </section>
+
+    <section class="tt-section tt-mt-0">
+      <div class="tt-container">
+        <div class="tt-tool-layout">
+          <div class="tt-tool-panel">
+            <h2>Your numbers</h2>
+            <p class="tt-panel-sub">Enter amounts in the selected currency. Results update as you type.</p>
+
+            <form id="profitForm" novalidate>
+              <div class="tt-form-grid">
+                <div class="tt-field">
+                  <label class="tt-label" for="currency">Currency</label>
+                  <select class="tt-select" id="currency" name="currency">
+                    <option value="USD" selected>USD - US dollar</option>
+                    <option value="EUR">EUR - Euro</option>
+                    <option value="GBP">GBP - British pound</option>
+                    <option value="CAD">CAD - Canadian dollar</option>
+                    <option value="AUD">AUD - Australian dollar</option>
+                    <option value="NZD">NZD - New Zealand dollar</option>
+                    <option value="INR">INR - Indian rupee</option>
+                    <option value="NGN">NGN - Nigerian naira</option>
+                    <option value="ZAR">ZAR - South African rand</option>
+                    <option value="KES">KES - Kenyan shilling</option>
+                    <option value="GHS">GHS - Ghanaian cedi</option>
+                    <option value="PHP">PHP - Philippine peso</option>
+                    <option value="SGD">SGD - Singapore dollar</option>
+                  </select>
+                </div>
+
+                <div class="tt-field">
+                  <label class="tt-label" for="taxRate">Tax rate (%)</label>
+                  <input class="tt-input" id="taxRate" name="taxRate" type="number" min="0" max="100" step="0.01" inputmode="decimal" value="0" aria-describedby="taxRateHelp">
+                  <p class="tt-help" id="taxRateHelp">Applied only to positive profit before tax.</p>
+                </div>
+
+                <div class="tt-field tt-field--full">
+                  <label class="tt-label" for="revenue">Revenue (sales)</label>
+                  <input class="tt-input" id="revenue" name="revenue" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00" aria-describedby="revenueHelp">
+                  <p class="tt-help" id="revenueHelp">Total sales before any expenses are subtracted.</p>
+                </div>
+
+                <div class="tt-field">
+                  <label class="tt-label" for="cogs">Cost of goods sold (COGS)</label>
+                  <input class="tt-input" id="cogs" name="cogs" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00" aria-describedby="cogsHelp">
+                  <p class="tt-help" id="cogsHelp">Direct costs of delivering what you sold.</p>
+                </div>
+
+                <div class="tt-field">
+                  <label class="tt-label" for="operating">Operating expenses</label>
+                  <input class="tt-input" id="operating" name="operating" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00" aria-describedby="operatingHelp">
+                  <p class="tt-help" id="operatingHelp">Rent, software, contractors, and similar fixed costs.</p>
+                </div>
+
+                <div class="tt-field">
+                  <label class="tt-label" for="marketing">Marketing expenses</label>
+                  <input class="tt-input" id="marketing" name="marketing" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00" aria-describedby="marketingHelp">
+                  <p class="tt-help" id="marketingHelp">Ads, content, events, and promotion costs.</p>
+                </div>
+
+                <div class="tt-field">
+                  <label class="tt-label" for="other">Other expenses</label>
+                  <input class="tt-input" id="other" name="other" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00" aria-describedby="otherHelp">
+                  <p class="tt-help" id="otherHelp">Any additional business costs not listed above.</p>
+                </div>
+              </div>
+
+              <div class="tt-form-actions">
+                <button class="tt-btn tt-btn-primary" type="submit">
+                  Calculate profit
+                  <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </button>
+                <button class="tt-btn tt-btn-secondary" id="resetProfitBtn" type="button">Reset</button>
+              </div>
+              <p class="tt-help tt-mt-2">Estimates only. Tax rules and allowable expenses vary by location.</p>
+            </form>
+          </div>
+
+          <aside class="tt-tool-panel tt-output-panel" id="profitResults" aria-labelledby="profitResultsTitle">
+            <h2 id="profitResultsTitle">Your profit</h2>
+            <p class="tt-panel-sub">Gross profit covers direct costs. Net profit covers every expense you entered.</p>
+
+            <div class="tt-status tt-status--info" id="profitStatus" role="status" aria-live="polite">
+              <i class="bi bi-info-circle" aria-hidden="true"></i>
+              <span>Enter revenue and costs to see gross profit, net profit, margins, and break-even.</span>
+            </div>
+
+            <div class="tt-result-grid">
+              <div class="tt-result-card tt-result-card--primary tt-result-card--hero" id="profitPrimaryCard">
+                <p class="tt-result-label">Net profit before tax</p>
+                <p class="tt-result-value" id="profitBeforeTax">$0.00</p>
+                <p class="tt-result-note" id="profitPrimaryNote">Enter revenue to calculate a meaningful margin.</p>
+              </div>
+
+              <div class="tt-result-card">
+                <p class="tt-result-label">Gross profit</p>
+                <p class="tt-result-value" id="grossProfit">$0.00</p>
+                <p class="tt-result-note" id="grossProfitNote">Revenue minus cost of goods sold.</p>
+              </div>
+
+              <div class="tt-result-card">
+                <p class="tt-result-label">Total expenses</p>
+                <p class="tt-result-value" id="totalExpenses">$0.00</p>
+                <p class="tt-result-note">COGS plus operating, marketing, and other costs.</p>
+              </div>
+
+              <div class="tt-result-card">
+                <p class="tt-result-label">Estimated tax</p>
+                <p class="tt-result-value" id="taxAmount">$0.00</p>
+                <p class="tt-result-note" id="taxNote">Applied at 0% only when profit before tax is positive.</p>
+              </div>
+
+              <div class="tt-result-card">
+                <p class="tt-result-label">Net profit after tax</p>
+                <p class="tt-result-value" id="netAfterTax">$0.00</p>
+                <p class="tt-result-note" id="netAfterTaxNote">Profit remaining after estimated tax.</p>
+              </div>
+
+              <div class="tt-result-card tt-result-card--success">
+                <p class="tt-result-label">Break-even revenue</p>
+                <p class="tt-result-value" id="breakEvenRevenue">Not available</p>
+                <p class="tt-result-note" id="breakEvenNote">Break-even needs a gross margin above 0. Your gross profit must be positive for this calculation.</p>
+              </div>
+            </div>
+
+            <h3 class="tt-mt-3 tt-mb-1">Revenue breakdown</h3>
+            <ul class="tt-summary-list">
+              <li><span>Revenue</span><span class="tt-summary-value" id="summaryRevenue">$0.00</span></li>
+              <li><span>Cost of goods sold</span><span class="tt-summary-value" id="summaryCogs">$0.00</span></li>
+              <li><span>Operating expenses</span><span class="tt-summary-value" id="summaryOperating">$0.00</span></li>
+              <li><span>Marketing expenses</span><span class="tt-summary-value" id="summaryMarketing">$0.00</span></li>
+              <li><span>Other expenses</span><span class="tt-summary-value" id="summaryOther">$0.00</span></li>
+              <li><span class="tt-summary-total">Total expenses</span><span class="tt-summary-value tt-summary-total" id="summaryTotalExpenses">$0.00</span></li>
+            </ul>
+          </aside>
+        </div>
+
+        <noscript>
+          <div class="tt-note tt-mt-3">
+            <p>The Profit Calculator needs JavaScript to work out totals in your browser. Enable JavaScript to use the tool.</p>
+          </div>
+        </noscript>
+      </div>
+    </section>
+
+    <section class="tt-section tt-section--white" aria-labelledby="profitHowTitle">
+      <div class="tt-container">
+        <div class="tt-section-head">
+          <span class="tt-eyebrow"><i class="bi bi-list-check" aria-hidden="true"></i>How it works</span>
+          <h2 id="profitHowTitle">Know which costs belong where</h2>
+          <p>The calculator separates direct costs from the fixed costs that keep the business running.</p>
+        </div>
+        <div class="tt-tool-layout">
+          <div>
+            <ol class="tt-instructions">
+              <li>Enter total revenue for the period you are reviewing.</li>
+              <li>Add cost of goods sold: the direct cost of the products or services you delivered.</li>
+              <li>Add operating, marketing, and other expenses. These are treated as fixed expenses for the break-even calculation.</li>
+              <li>Set a tax rate if you want an after-tax estimate. Tax applies only when profit before tax is positive.</li>
+              <li>Use the gross and net margins to compare pricing, cost changes, or different periods.</li>
+            </ol>
+          </div>
+          <div class="tt-tool-panel">
+            <h3 class="tt-mb-1">The formulas used</h3>
+            <ul class="tt-example-values">
+              <li><span>Gross profit</span><strong>Revenue - COGS</strong></li>
+              <li><span>Net profit before tax</span><strong>Revenue - all expenses</strong></li>
+              <li><span>Gross margin</span><strong>Gross profit / revenue</strong></li>
+              <li><span>Net margin</span><strong>Net profit / revenue</strong></li>
+              <li><span>Break-even revenue</span><strong>Fixed expenses / gross margin</strong></li>
+            </ul>
+            <p class="tt-help tt-mt-2">Break-even is not available when gross margin is zero or negative, because selling more would not cover fixed costs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tt-section" aria-labelledby="profitFaqTitle">
+      <div class="tt-container tt-container--narrow">
+        <div class="tt-section-head">
+          <span class="tt-eyebrow"><i class="bi bi-question-circle" aria-hidden="true"></i>FAQ</span>
+          <h2 id="profitFaqTitle">Profit Calculator questions</h2>
+          <p>Short answers about margins, tax, break-even, and privacy.</p>
+        </div>
+        <div class="tt-faq">
+          <details>
+            <summary>What is the difference between gross profit and net profit?</summary>
+            <div class="tt-faq-body">
+              <p>Gross profit is revenue minus the cost of goods sold. Net profit before tax is revenue minus all expenses, including cost of goods sold, operating costs, marketing, and other costs.</p>
+            </div>
+          </details>
+          <details>
+            <summary>How is profit margin calculated?</summary>
+            <div class="tt-faq-body">
+              <p>Gross margin is gross profit divided by revenue. Net margin before tax is net profit before tax divided by revenue. Both are shown as percentages.</p>
+            </div>
+          </details>
+          <details>
+            <summary>What does break-even revenue mean?</summary>
+            <div class="tt-faq-body">
+              <p>Break-even revenue is the sales amount needed to cover fixed expenses after accounting for the cost of goods sold. This calculator divides operating, marketing, and other fixed expenses by the gross margin ratio. It cannot calculate break-even when the gross margin is zero or negative.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Does the Profit Calculator include tax?</summary>
+            <div class="tt-faq-body">
+              <p>It applies the tax rate you enter to positive profit before tax. If profit before tax is zero or negative, no tax is subtracted. The result is an estimate, not tax advice.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Is my financial data stored?</summary>
+            <div class="tt-faq-body">
+              <p>No. The calculator runs locally in your browser. Your revenue and expense figures are not sent to a TasklyTools server.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Can I use a different currency?</summary>
+            <div class="tt-faq-body">
+              <p>Yes. Choose a currency from the list and the result labels update. The calculator formats the numbers you enter; it does not convert between currencies.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="tt-section tt-section--white" aria-labelledby="relatedTitle">
+      <div class="tt-container">
+        <div class="tt-note tt-mb-2"><p>Want the full walkthrough? Read <a href="/guides/how-to-calculate-small-business-profit/">how to calculate small business profit</a> for a worked example, margin formulas, and a monthly review routine.</p></div>
+        <div class="tt-section-head">
+          <span class="tt-eyebrow"><i class="bi bi-grid" aria-hidden="true"></i>Keep exploring</span>
+          <h2 id="relatedTitle">More tools for your workflow</h2>
+          <p>Use these TasklyTools to turn your numbers into clearer client work.</p>
+        </div>
+        <div class="tt-related-grid">
+          <a class="tt-related-card" href="/tools/freelance-rate-calculator/">
+            <span class="tt-icon-box"><i class="bi bi-calculator" aria-hidden="true"></i></span>
+            <div>
+              <h3>Freelance Rate Calculator</h3>
+              <p>Turn income goals into a rate</p>
+            </div>
+          </a>
+          <a class="tt-related-card" href="/tools/invoice-generator/">
+            <span class="tt-icon-box"><i class="bi bi-receipt" aria-hidden="true"></i></span>
+            <div>
+              <h3>Invoice Generator</h3>
+              <p>Create a professional invoice</p>
+            </div>
+          </a>
+          <a class="tt-related-card" href="/tools/proposal-generator/">
+            <span class="tt-icon-box"><i class="bi bi-file-earmark-text" aria-hidden="true"></i></span>
+            <div>
+              <h3>Proposal Generator</h3>
+              <p>Write a clear client proposal</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container-fluid footer-section pt-5 pb-3">
+    <div id="footer-container"></div>
+  </footer>
+
+  <script src="/footer-script.js" defer></script>
+  <script src="/nav.js" defer></script>
+  <script src="/wp-content/themes/aj-square/assets/js/script.js?ver=1.1.0" defer></script>
+  <script src="/wp-content/themes/aj-square/assets/js/bootstrap.bundle.min.js?ver=4.6.2" defer></script>
+  <script src="../../tasklytools-new-assets/js/config.js" defer></script>
+  <script src="../../tasklytools-new-assets/js/components.js" defer></script>
+  <script src="../../tasklytools-new-assets/js/tool-utils.js" defer></script>
+  <script src="../../tasklytools-new-assets/js/profit-logic.js" defer></script>
+  <script src="../../tasklytools-new-assets/js/profit-calculator.js" defer></script>
+</body>
+</html>

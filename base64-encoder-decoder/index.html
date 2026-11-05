@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Encode text or files to Base64 and decode Base64 to UTF-8 text or binary files. Supports URL-safe Base64, Unicode, padding checks, and local-only processing.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <title>Base64 Encoder &amp; Decoder - Taskly Tools</title>
+    <link rel="canonical" href="https://tasklytools.org/base64-encoder-decoder/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Base64 Encoder &amp; Decoder - Taskly Tools">
+    <meta property="og:url" content="https://tasklytools.org/base64-encoder-decoder/">
+    <meta property="og:site_name" content="Taskly Tools">
+    <meta property="og:image" content="https://tasklytools.org/wp-content/uploads/2025/05/taskly-tools-1.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/wp-content/themes/aj-square/style.css?ver=1.0.0">
+    <link rel="stylesheet" href="/wp-content/themes/aj-square/assets/css/style.css?ver=1.0.0">
+    <link rel="stylesheet" href="/wp-content/themes/aj-square/assets/css/bootstrap.min.css?ver=4.6.2">
+    <link rel="stylesheet" href="/wp-content/themes/aj-square/assets/bootstrap-icons/bootstrap-icons95a1.css?ver=1.10.5">
+    <link rel="stylesheet" href="/assets/tools/toolkit.css?ver=1.0.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+
+    <link rel="icon" href="/wp-content/uploads/2025/05/cropped-favicon-1-32x32.png" sizes="32x32">
+    <link rel="icon" href="/wp-content/uploads/2025/05/cropped-favicon-1-192x192.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/wp-content/uploads/2025/05/cropped-favicon-1-180x180.png">
+  </head>
+  <body class="tt-tool-body wp-singular page-template page-template-template-customblock page-template-template-customblock-php page wp-theme-aj-square">
+    <a class="tt-skip-link" href="#tool">Skip to tool</a>
+    <div id="pre-load-animation"></div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+    <header class="container-fluid sticky-top" id="main-header">
+      <div id="navbar-container"></div>
+    </header>
+
+    <main id="tool" class="container tt-page">
+      <div class="tt-hero">
+        <nav class="tt-breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/utility-tools/">Utility Tools</a>
+          <span aria-hidden="true">/</span>
+          <span>Base64 Encoder &amp; Decoder</span>
+        </nav>
+        <h1>Base64 Encoder &amp; Decoder</h1>
+        <p>Encode UTF-8 text or any file to Base64, and decode Base64 back to text or a binary download. Standard and URL-safe alphabets are supported. Nothing is uploaded.</p>
+      </div>
+
+      <div class="tt-tabs" role="tablist" aria-label="Base64 tool views">
+        <button type="button" class="tt-tab" id="tabEncode" role="tab" aria-selected="true" aria-controls="panelEncode" tabindex="0">
+          <i class="bi bi-arrow-right-circle" aria-hidden="true"></i>
+          Encode
+        </button>
+        <button type="button" class="tt-tab" id="tabDecode" role="tab" aria-selected="false" aria-controls="panelDecode" tabindex="-1">
+          <i class="bi bi-arrow-left-circle" aria-hidden="true"></i>
+          Decode
+        </button>
+      </div>
+
+      <section id="panelEncode" role="tabpanel" aria-labelledby="tabEncode">
+        <div class="tt-layout">
+          <section class="tt-card" aria-labelledby="encode-input-title">
+            <div class="tt-card-head">
+              <div>
+                <h2 id="encode-input-title">Base64 input</h2>
+                <p class="tt-help">Choose text or a file. Text is encoded as UTF-8.</p>
+              </div>
+            </div>
+
+            <div class="tt-form-row">
+              <label class="tt-label" for="encodeSource">Encode from</label>
+              <select class="tt-select" id="encodeSource">
+                <option value="text">Text</option>
+                <option value="file">File</option>
+              </select>
+            </div>
+
+            <div id="encodeTextPanel">
+              <div class="tt-form-row">
+                <label class="tt-label" for="encodeText">Text to encode</label>
+                <textarea class="tt-textarea" id="encodeText" spellcheck="false" placeholder="Paste text here. Unicode, emoji, and line breaks are supported."></textarea>
+              </div>
+            </div>
+
+            <div id="encodeFilePanel" class="tt-hidden">
+              <div class="tt-form-row">
+                <label class="tt-label" for="encodeFile">File to encode</label>
+                <input class="tt-input" type="file" id="encodeFile">
+                <p class="tt-help" id="encodeFileInfo">No file selected. Files are read locally and never uploaded.</p>
+              </div>
+            </div>
+
+            <div class="tt-form-row">
+              <label class="tt-check" for="encodeUrlSafe">
+                <input type="checkbox" id="encodeUrlSafe">
+                <span>
+                  Use URL-safe Base64
+                  <small>Use - and _ instead of + and /, and omit padding. Useful for URLs, filenames, and tokens.</small>
+                </span>
+              </label>
+            </div>
+
+            <div class="tt-btn-row">
+              <button type="button" class="tt-btn tt-btn-secondary" id="resetEncodeBtn">
+                <i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i>
+                Clear
+              </button>
+            </div>
+          </section>
+
+          <div class="tt-stack">
+            <section class="tt-card" aria-labelledby="encode-output-title">
+              <div class="tt-card-head">
+                <div>
+                  <h2 id="encode-output-title">Encoded Base64</h2>
+                  <p class="tt-help" id="encodeStats">0 bytes in / 0 characters out</p>
+                </div>
+              </div>
+
+              <div class="tt-output tt-hidden" id="encodeOutputWrap">
+                <pre id="encodeOutput"></pre>
+              </div>
+              <p class="tt-empty" id="encodeEmpty">Encoded output will appear here.</p>
+
+              <p class="tt-status tt-status--neutral tt-mt-2" id="encodeStatus" role="status" aria-live="polite">
+                Enter text to encode.
+              </p>
+
+              <div class="tt-btn-row">
+                <button type="button" class="tt-btn tt-btn-primary" id="copyEncodedBtn" disabled>
+                  <i class="bi bi-clipboard" aria-hidden="true"></i>
+                  Copy Base64
+                </button>
+                <button type="button" class="tt-btn tt-btn-secondary" id="downloadEncodedBtn" disabled>
+                  <i class="bi bi-download" aria-hidden="true"></i>
+                  Download .txt
+                </button>
+                <button type="button" class="tt-btn tt-btn-secondary" id="decodeEncodedBtn" disabled>
+                  <i class="bi bi-arrow-left-right" aria-hidden="true"></i>
+                  Decode this
+                </button>
+              </div>
+            </section>
+
+            <section class="tt-card">
+              <div class="tt-card-head">
+                <h2>Encoding details</h2>
+              </div>
+              <ul>
+                <li><strong>UTF-8 text</strong> is encoded by bytes, so accented letters, emoji, and non-Latin scripts round-trip correctly.</li>
+                <li><strong>Files</strong> are read with the browser File API and encoded without being uploaded.</li>
+                <li><strong>URL-safe mode</strong> replaces <code>+</code> with <code>-</code>, <code>/</code> with <code>_</code>, and removes trailing padding.</li>
+                <li><strong>Base64 is not encryption.</strong> Anyone can decode it, so never use it to protect passwords or private data.</li>
+              </ul>
+              <p class="tt-privacy"><strong>Private by design:</strong> all encoding and decoding happens in your browser.</p>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <section id="panelDecode" class="tt-hidden" role="tabpanel" aria-labelledby="tabDecode">
+        <div class="tt-layout">
+          <section class="tt-card" aria-labelledby="decode-input-title">
+            <div class="tt-card-head">
+              <div>
+                <h2 id="decode-input-title">Base64 to decode</h2>
+                <p class="tt-help">Standard and URL-safe Base64 are detected automatically.</p>
+              </div>
+            </div>
+
+            <div class="tt-form-row">
+              <label class="tt-label" for="decodeInput">Base64 input</label>
+              <textarea class="tt-textarea tt-codearea" id="decodeInput" spellcheck="false" placeholder="SGVsbG8sIHdvcmxkIQ=="></textarea>
+            </div>
+
+            <div class="tt-form-row">
+              <label class="tt-check" for="decodeIgnoreWhitespace">
+                <input type="checkbox" id="decodeIgnoreWhitespace" checked>
+                <span>
+                  Ignore whitespace
+                  <small>Allow line breaks, spaces, and tabs in pasted Base64. All other characters are validated.</small>
+                </span>
+              </label>
+            </div>
+
+            <div class="tt-btn-row">
+              <button type="button" class="tt-btn tt-btn-primary" id="decodeButton">
+                <i class="bi bi-check2" aria-hidden="true"></i>
+                Decode
+              </button>
+              <button type="button" class="tt-btn tt-btn-secondary" id="resetDecodeBtn">
+                <i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i>
+                Clear
+              </button>
+            </div>
+          </section>
+
+          <section class="tt-card" aria-labelledby="decode-output-title">
+            <div class="tt-card-head">
+              <div>
+                <h2 id="decode-output-title">Decoded output</h2>
+                <p class="tt-help" id="decodeStats">0 bytes</p>
+              </div>
+            </div>
+
+            <p class="tt-status tt-status--neutral" id="decodeStatus" role="status" aria-live="polite">
+              Paste Base64 to decode it as UTF-8 text or download the decoded bytes.
+            </p>
+
+            <div class="tt-output tt-output--light tt-mt-2 tt-hidden" id="decodeOutputWrap">
+              <pre id="decodeOutput"></pre>
+            </div>
+            <p class="tt-empty tt-mt-2" id="decodeEmpty">Decoded output will appear here.</p>
+
+            <div class="tt-btn-row">
+              <button type="button" class="tt-btn tt-btn-primary" id="copyDecodedBtn" disabled>
+                <i class="bi bi-clipboard" aria-hidden="true"></i>
+                Copy text
+              </button>
+              <button type="button" class="tt-btn tt-btn-secondary" id="downloadDecodedBtn" disabled>
+                <i class="bi bi-download" aria-hidden="true"></i>
+                Download decoded file
+              </button>
+            </div>
+
+            <p class="tt-help">If the bytes are not valid UTF-8, the output shows a hex preview and the download button saves the raw binary data. The copy button is disabled for binary output.</p>
+          </section>
+        </div>
+      </section>
+
+      <div class="tt-content">
+        <h2>What Base64 is used for</h2>
+        <p>Base64 represents binary data using printable ASCII characters. It is commonly used in data URLs, email attachments, JSON payloads, authentication headers, and tokens. Encoding increases the data size by roughly one third, so it is not a compression method. It is also not encryption: Base64 is trivially reversible and provides no secrecy.</p>
+
+        <h2>Standard and URL-safe Base64</h2>
+        <p>Standard Base64 uses the characters <code>+</code> and <code>/</code>, and usually ends with <code>=</code> padding. URL-safe Base64 uses <code>-</code> and <code>_</code> so the value can be placed in a URL or filename without escaping, and it often omits padding. This decoder accepts either alphabet, restores missing padding, and rejects values that mix the two alphabets. It also rejects invalid characters and impossible lengths instead of silently ignoring them.</p>
+
+        <h2>Unicode and binary handling</h2>
+        <p>Text is encoded as UTF-8 before Base64 conversion, which is why emoji and non-Latin characters survive the round trip. When decoding, the tool first tries strict UTF-8. If the bytes are not valid UTF-8, it does not invent replacement characters: it shows a hex preview and lets you download the original binary bytes. This is useful for images, PDFs, archives, and other files that are not meant to be read as text.</p>
+
+        <h2>Common Base64 mistakes</h2>
+        <ul>
+          <li>Do not remove characters from the middle of a Base64 value to shorten it; decode the value or use a proper token format.</li>
+          <li>Do not assume a string is Base64 just because it contains letters and numbers. Validate its length, alphabet, and padding.</li>
+          <li>Do not paste secrets into random online services. This tool processes data locally, but always verify the privacy claims of any tool you use.</li>
+          <li>Remember that Base64 is not a substitute for encryption, hashing, or access control.</li>
+        </ul>
+
+        <h2>Related tools</h2>
+        <div class="tt-related">
+          <a href="/password-strength-checker/"><i class="bi bi-shield-lock" aria-hidden="true"></i> Password Strength Checker</a>
+          <a href="/htaccess-redirect-generator/"><i class="bi bi-signpost-split" aria-hidden="true"></i> HTACCESS Redirect Generator</a>
+          <a href="/robots-txt-generator-validator/"><i class="bi bi-robot" aria-hidden="true"></i> Robots.txt Generator &amp; Validator</a>
+          <a href="/tools/redirect-checker/"><i class="bi bi-signpost-2" aria-hidden="true"></i> Redirect Checker</a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="container-fluid footer-section pt-5 pb-3">
+      <div id="footer-container"></div>
+    </footer>
+
+    <script src="/footer-script.js" defer></script>
+    <script src="/nav.js" defer></script>
+    <script src="/wp-content/themes/aj-square/assets/js/script.js?ver=1.1.0" defer></script>
+    <script src="/wp-content/themes/aj-square/assets/js/bootstrap.bundle.min.js?ver=4.6.2" defer></script>
+    <script src="/assets/tools/toolkit.js?ver=1.0.0" defer></script>
+    <script src="/base64-encoder-decoder/logic.js?ver=1.0.0" defer></script>
+    <script src="/base64-encoder-decoder/app.js?ver=1.0.0" defer></script>
+  </body>
+</html>

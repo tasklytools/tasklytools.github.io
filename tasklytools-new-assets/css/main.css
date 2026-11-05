@@ -1,0 +1,1085 @@
+/* TasklyTools new page styles. Scoped to body.tt-new / .tt-main. */
+
+.tt-main {
+  padding-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Hero
+   -------------------------------------------------------------------------- */
+.tt-hero {
+  position: relative;
+  padding: clamp(2.25rem, 5vw, 4.5rem) 0 clamp(2rem, 4vw, 3.5rem);
+  background:
+    radial-gradient(60rem 28rem at 85% -10%, rgba(23, 92, 211, 0.1), transparent 60%),
+    radial-gradient(36rem 20rem at 0% 20%, rgba(214, 0, 110, 0.06), transparent 55%);
+}
+
+.tt-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.tt-hero-copy {
+  min-width: 0;
+}
+
+.tt-hero h1 {
+  margin-bottom: 1rem;
+  max-width: 16ch;
+}
+
+.tt-hero .tt-lead {
+  max-width: 56ch;
+  margin-bottom: 1.5rem;
+}
+
+.tt-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-bottom: 1.35rem;
+}
+
+.tt-hero-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tt-hero-points li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+  color: var(--tt-muted);
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.tt-hero-points .bi {
+  color: var(--tt-success);
+  font-size: 1rem;
+}
+
+.tt-hero-panel {
+  position: relative;
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid var(--tt-border);
+  border-radius: var(--tt-radius-lg);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: var(--tt-shadow-lg);
+  backdrop-filter: blur(6px);
+}
+
+.tt-hero-panel-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.tt-hero-panel-title {
+  margin: 0;
+  color: var(--tt-ink);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.tt-hero-preview {
+  padding: 1rem;
+  border: 1px solid var(--tt-border);
+  border-radius: 14px;
+  background: var(--tt-surface);
+}
+
+.tt-hero-preview-row {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.55rem;
+  color: var(--tt-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.tt-hero-preview-row:last-child {
+  margin-bottom: 0;
+}
+
+.tt-hero-preview-row .bi {
+  color: var(--tt-primary);
+}
+
+.tt-url-preview {
+  display: block;
+  margin-top: 0.75rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px dashed var(--tt-border-strong);
+  border-radius: 10px;
+  background: var(--tt-surface-2);
+  color: var(--tt-ink);
+  font-family: var(--tt-mono);
+  font-size: 0.76rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.tt-hero-panel-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 0.85rem;
+}
+
+/* --------------------------------------------------------------------------
+   Search
+   -------------------------------------------------------------------------- */
+.tt-search-section {
+  padding-top: 0;
+}
+
+.tt-search-card {
+  padding: clamp(1.1rem, 3vw, 1.6rem);
+  border: 1px solid var(--tt-border);
+  border-radius: var(--tt-radius-lg);
+  background: var(--tt-surface);
+  box-shadow: var(--tt-shadow);
+}
+
+.tt-search-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.tt-search-field {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.tt-search-field .bi-search {
+  position: absolute;
+  top: 50%;
+  left: 0.95rem;
+  transform: translateY(-50%);
+  color: var(--tt-muted);
+  font-size: 1.05rem;
+  pointer-events: none;
+}
+
+.tt-search-field .tt-input {
+  min-height: 52px;
+  padding-left: 2.6rem;
+}
+
+.tt-search-hint {
+  margin: 0.75rem 0 0;
+  color: var(--tt-muted);
+  font-size: 0.82rem;
+}
+
+.tt-search-results {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 0.9rem;
+}
+
+.tt-search-result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--tt-border);
+  border-radius: 12px;
+  background: var(--tt-surface);
+}
+
+.tt-search-result-main {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-width: 0;
+}
+
+.tt-search-result-icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--tt-primary-soft);
+  color: var(--tt-primary);
+  font-size: 1.05rem;
+}
+
+.tt-search-result-title {
+  margin: 0;
+  color: var(--tt-ink);
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+.tt-search-result-meta {
+  margin: 0;
+  color: var(--tt-muted);
+  font-size: 0.78rem;
+}
+
+.tt-search-empty {
+  margin: 0.9rem 0 0;
+  padding: 0.85rem;
+  border: 1px dashed var(--tt-border-strong);
+  border-radius: 12px;
+  color: var(--tt-muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   Tool cards
+   -------------------------------------------------------------------------- */
+.tt-tool-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.tt-tool-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  height: 100%;
+  padding: 1.25rem;
+  border: 1px solid var(--tt-border);
+  border-radius: var(--tt-radius);
+  background: var(--tt-surface);
+  box-shadow: var(--tt-shadow-sm);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.tt-tool-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--tt-border-strong);
+  box-shadow: var(--tt-shadow);
+}
+
+.tt-tool-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.tt-tool-card-title {
+  margin: 0 0 0.35rem;
+  color: var(--tt-ink);
+  font-size: 1.08rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.tt-tool-card-desc {
+  margin: 0;
+  color: var(--tt-body);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.tt-tool-card-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-top: auto;
+  padding-top: 0.35rem;
+}
+
+.tt-tool-card-foot .tt-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.tt-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--tt-primary) !important;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none !important;
+}
+
+.tt-card-link:hover {
+  color: var(--tt-primary-strong) !important;
+  text-decoration: underline !important;
+}
+
+/* --------------------------------------------------------------------------
+   Categories
+   -------------------------------------------------------------------------- */
+.tt-category-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.tt-category-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.35rem;
+  border: 1px solid var(--tt-border);
+  border-radius: var(--tt-radius);
+  background: var(--tt-surface);
+  color: inherit !important;
+  text-decoration: none !important;
+  box-shadow: var(--tt-shadow-sm);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.tt-category-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--tt-primary);
+  box-shadow: var(--tt-shadow);
+  text-decoration: none !important;
+}
+
+.tt-category-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.tt-category-card h3 {
+  margin: 0;
+}
+
+.tt-category-card p {
+  margin: 0;
+  color: var(--tt-muted);
+  font-size: 0.9rem;
+}
+
+.tt-category-card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  color: var(--tt-primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   Value props / steps
+   -------------------------------------------------------------------------- */
+.tt-value-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.tt-value-card {
+  padding: 1.3rem;
+  border: 1px solid var(--tt-border);
+  border-radius: var(--tt-radius);
+  background: var(--tt-surface);
+}
+
+.tt-value-card h3 {
+  margin: 0.8rem 0 0.4rem;
+  font-size: 1.02rem;
+}
+
+.tt-value-card p {
+  margin: 0;
+  color: var(--tt-muted);
+  font-size: 0.9rem;
+}
+
+.tt-steps {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+  counter-reset: tt-step;
+}
+
+.tt-step {
+  position: relative;
+  padding: 1.4rem 1.25rem 1.25rem;
+  border: 1px solid var(--tt-border);
+  border-radius: var(--tt-radius);
+  background: var(--tt-surface);
+}
+
+.tt-step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  margin-bottom: 0.8rem;
+  border-radius: 10px;
+  background: var(--tt-ink);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.tt-step h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.02rem;
+}
+
+.tt-step p {
+  margin: 0;
+  color: var(--tt-muted);
+  font-size: 0.9rem;
+}
+
+/* --------------------------------------------------------------------------
+   Comparison
+   -------------------------------------------------------------------------- */
+.tt-compare-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--tt-border);
+  border-radius: var(--tt-radius);
+  background: var(--tt-surface);
+  box-shadow: var(--tt-shadow-sm);
+}
+
+.tt-compare {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.tt-compare th,
+.tt-compare td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--tt-border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.tt-compare thead th {
+  background: var(--tt-surface-2);
+  color: var(--tt-ink);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.tt-compare thead th.tt-col-pro {
+  background: var(--tt-primary);
+  color: #fff;
+}
+
+.tt-compare tbody th {
+  color: var(--tt-ink);
+  font-weight: 700;
+}
+
+.tt-compare tbody tr:last-child th,
+.tt-compare tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.tt-compare .tt-yes {
+  color: var(--tt-success);
+  font-weight: 700;
+}
+
+.tt-compare .tt-no {
+  color: var(--tt-muted);
+  font-weight: 600;
+}
+
+.tt-compare-note {
+  margin: 0.85rem 0 0;
+  color: var(--tt-muted);
+  font-size: 0.82rem;
+}
+
+/* --------------------------------------------------------------------------
+   Templates
+   -------------------------------------------------------------------------- */
+.tt-template-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.tt-template-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  height: 100%;
+  padding: 1.25rem;
+  border: 1px solid var(--tt-border);
+  border-radius: var(--tt-radius);
+  background: var(--tt-surface);
+}
+
+.tt-template-card h3 {
+  margin: 0;
+  font-size: 1.02rem;
+}
+
+.tt-template-card p {
+  margin: 0;
+  color: var(--tt-muted);
+  font-size: 0.9rem;
+}
+
+.tt-template-card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-top: auto;
+  padding-top: 0.4rem;
+}
+
+/* --------------------------------------------------------------------------
+   FAQ
+   -------------------------------------------------------------------------- */
+.tt-faq {
+  display: grid;
+  gap: 0.65rem;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.tt-faq details {
+  border: 1px solid var(--tt-border);
+  border-radius: 13px;
+  background: var(--tt-surface);
+  box-shadow: var(--tt-shadow-sm);
+}
+
+.tt-faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.1rem;
+  color: var(--tt-ink);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.tt-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.tt-faq summary::after {
+  content: "\F282";
+  flex: 0 0 auto;
+  font-family: "bootstrap-icons";
+  color: var(--tt-primary);
+  font-size: 0.9rem;
+  transition: transform 0.16s ease;
+}
+
+.tt-faq details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.tt-faq details[open] summary {
+  border-bottom: 1px solid var(--tt-border);
+}
+
+.tt-faq .tt-faq-body {
+  padding: 0.9rem 1.1rem 1.05rem;
+}
+
+.tt-faq .tt-faq-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Newsletter
+   -------------------------------------------------------------------------- */
+.tt-newsletter {
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border-radius: var(--tt-radius-lg);
+  background: var(--tt-ink);
+  color: #fff;
+  box-shadow: var(--tt-shadow-lg);
+}
+
+.tt-newsletter h2 {
+  color: #fff;
+}
+
+.tt-newsletter p {
+  color: #c9d6e6;
+}
+
+.tt-newsletter-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.4rem;
+  align-items: center;
+}
+
+.tt-newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.tt-newsletter-form .tt-label {
+  color: #e6eef8;
+}
+
+.tt-newsletter-form .tt-input {
+  border-color: #33465f;
+  background: #12263f;
+  color: #fff;
+}
+
+.tt-newsletter-form .tt-input::placeholder {
+  color: #8fa3bb;
+}
+
+.tt-newsletter-form .tt-input:focus {
+  border-color: #7cb0ff;
+  box-shadow: 0 0 0 4px rgba(124, 176, 255, 0.18);
+}
+
+.tt-newsletter .tt-status {
+  border-color: #33465f;
+  background: #12263f;
+  color: #dbe7f5;
+}
+
+.tt-newsletter .tt-status--success {
+  border-color: #2f7a57;
+  background: rgba(8, 116, 67, 0.22);
+  color: #d7f5e6;
+}
+
+.tt-newsletter .tt-status--error {
+  border-color: #8a3b36;
+  background: rgba(180, 35, 24, 0.18);
+  color: #ffd9d5;
+}
+
+.tt-newsletter-note {
+  margin: 0.7rem 0 0;
+  color: #8fa3bb;
+  font-size: 0.78rem;
+}
+
+/* --------------------------------------------------------------------------
+   Directory
+   -------------------------------------------------------------------------- */
+.tt-page-hero {
+  padding: clamp(1.8rem, 4vw, 3.2rem) 0 1.6rem;
+  background:
+    radial-gradient(48rem 22rem at 90% -20%, rgba(23, 92, 211, 0.1), transparent 60%);
+}
+
+.tt-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.9rem;
+  color: var(--tt-muted);
+  font-size: 0.82rem;
+}
+
+.tt-breadcrumb a {
+  color: var(--tt-primary) !important;
+}
+
+.tt-breadcrumb span[aria-hidden="true"] {
+  color: var(--tt-border-strong);
+}
+
+.tt-page-hero h1 {
+  margin-bottom: 0.6rem;
+}
+
+.tt-page-hero p {
+  max-width: 62ch;
+  margin-bottom: 0;
+  color: var(--tt-muted);
+}
+
+.tt-directory-toolbar {
+  display: grid;
+  gap: 0.85rem;
+  margin: 1.5rem 0 1.2rem;
+  padding: 1rem;
+  border: 1px solid var(--tt-border);
+  border-radius: var(--tt-radius);
+  background: var(--tt-surface);
+  box-shadow: var(--tt-shadow-sm);
+}
+
+.tt-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.tt-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 38px;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid var(--tt-border-strong);
+  border-radius: 999px;
+  background: var(--tt-surface);
+  color: var(--tt-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.tt-filter:hover {
+  border-color: var(--tt-primary);
+  color: var(--tt-primary);
+}
+
+.tt-filter[aria-pressed="true"] {
+  border-color: var(--tt-primary);
+  background: var(--tt-primary);
+  color: #fff;
+}
+
+.tt-directory-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-bottom: 0.9rem;
+  color: var(--tt-muted);
+  font-size: 0.85rem;
+}
+
+.tt-directory-grid {
+  margin-bottom: 1rem;
+}
+
+.tt-empty-state {
+  padding: 2rem 1rem;
+  border: 1px dashed var(--tt-border-strong);
+  border-radius: var(--tt-radius);
+  background: var(--tt-surface);
+  text-align: center;
+}
+
+.tt-empty-state .tt-icon-box {
+  margin-bottom: 0.75rem;
+}
+
+.tt-empty-state h3 {
+  margin-bottom: 0.35rem;
+}
+
+.tt-empty-state p {
+  margin-bottom: 1rem;
+  color: var(--tt-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Tool page
+   -------------------------------------------------------------------------- */
+.tt-tool-hero {
+  padding: clamp(1.5rem, 3.5vw, 2.6rem) 0 1.4rem;
+  background:
+    radial-gradient(44rem 20rem at 88% -30%, rgba(23, 92, 211, 0.12), transparent 60%);
+}
+
+.tt-tool-hero h1 {
+  margin-bottom: 0.6rem;
+}
+
+.tt-tool-hero p {
+  max-width: 68ch;
+  margin-bottom: 0;
+  color: var(--tt-muted);
+}
+
+.tt-tool-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.2rem;
+  align-items: start;
+}
+
+.tt-tool-panel {
+  min-width: 0;
+  padding: 1.25rem;
+  border: 1px solid var(--tt-border);
+  border-radius: var(--tt-radius);
+  background: var(--tt-surface);
+  box-shadow: var(--tt-shadow-sm);
+}
+
+.tt-tool-panel h2 {
+  margin-bottom: 0.25rem;
+  font-size: 1.2rem;
+}
+
+.tt-tool-panel .tt-panel-sub {
+  margin-bottom: 1rem;
+  color: var(--tt-muted);
+  font-size: 0.88rem;
+}
+
+.tt-form-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0 1rem;
+}
+
+.tt-form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.35rem;
+}
+
+.tt-output-panel {
+  position: static;
+}
+
+.tt-output-box {
+  min-height: 96px;
+  padding: 0.85rem;
+  border: 1px dashed var(--tt-border-strong);
+  border-radius: 12px;
+  background: var(--tt-surface-2);
+  color: var(--tt-ink);
+  font-family: var(--tt-mono);
+  font-size: 0.8rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.tt-output-box:empty::before {
+  content: "Your campaign URL will appear here.";
+  color: var(--tt-muted);
+  font-family: var(--tt-font);
+  font-size: 0.88rem;
+}
+
+.tt-output-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.8rem;
+}
+
+.tt-example-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+}
+
+.tt-link-button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--tt-primary) !important;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.tt-link-button:hover {
+  color: var(--tt-primary-strong) !important;
+}
+
+.tt-note {
+  padding: 0.85rem 1rem;
+  border-left: 4px solid var(--tt-primary);
+  border-radius: 0 10px 10px 0;
+  background: var(--tt-primary-soft);
+  color: var(--tt-primary-strong);
+  font-size: 0.88rem;
+}
+
+.tt-note p:last-child {
+  margin-bottom: 0;
+  color: inherit;
+}
+
+.tt-instructions {
+  counter-reset: tt-instr;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tt-instructions li {
+  position: relative;
+  margin-bottom: 0.7rem;
+  padding-left: 2.15rem;
+  color: var(--tt-body);
+  font-size: 0.92rem;
+}
+
+.tt-instructions li::before {
+  counter-increment: tt-instr;
+  content: counter(tt-instr);
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+  background: var(--tt-primary-soft);
+  color: var(--tt-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.tt-related-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.7rem;
+}
+
+.tt-related-card {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.8rem;
+  border: 1px solid var(--tt-border);
+  border-radius: 12px;
+  background: var(--tt-surface);
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.tt-related-card:hover {
+  border-color: var(--tt-primary);
+  text-decoration: none !important;
+}
+
+.tt-related-card .tt-icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.tt-related-card h3 {
+  margin: 0 0 0.1rem;
+  font-size: 0.92rem;
+}
+
+.tt-related-card p {
+  margin: 0;
+  color: var(--tt-muted);
+  font-size: 0.78rem;
+}
+
+.tt-related-card--muted {
+  opacity: 0.85;
+}
+
+.tt-article {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.tt-article h2 {
+  margin-top: 1.8rem;
+  margin-bottom: 0.6rem;
+  font-size: 1.35rem;
+}
+
+.tt-article h2:first-child {
+  margin-top: 0;
+}
+
+.tt-article code {
+  padding: 0.1rem 0.35rem;
+  border-radius: 5px;
+  background: var(--tt-surface-2);
+  color: var(--tt-ink);
+  font-family: var(--tt-mono);
+  font-size: 0.85em;
+}
+
+.tt-article .tt-inline-list {
+  margin-bottom: 0;
+}
+
+/* Small helpers */
+.tt-mt-0 { margin-top: 0 !important; }
+.tt-mt-1 { margin-top: 0.5rem !important; }
+.tt-mt-2 { margin-top: 1rem !important; }
+.tt-mt-3 { margin-top: 1.5rem !important; }
+.tt-mb-0 { margin-bottom: 0 !important; }
+.tt-mb-1 { margin-bottom: 0.5rem !important; }
+.tt-mb-2 { margin-bottom: 1rem !important; }
+.tt-text-center { text-align: center; }
+.tt-hidden { display: none !important; }
+
+/* UTM Builder specifics */
+code.tt-output-box {
+  display: block;
+  white-space: pre-wrap;
+}
+
+.tt-required {
+  color: var(--tt-danger);
+  font-weight: 700;
+}
+
+.tt-param-table td,
+.tt-param-table th {
+  font-size: 0.88rem;
+}
+
+.tt-param-table code {
+  color: var(--tt-primary-strong);
+  font-size: 0.85em;
+}
+
+.tt-tool-hero .tt-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.6rem;
+}

@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Invoice Generator - Free Online Invoice Maker - TasklyTools</title>
+  <meta name="description" content="Create a clean, professional invoice in your browser. Add line items, tax, and discounts, then print or save the finished invoice as a PDF. Free and no signup.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://tasklytools.org/tools/invoice-generator/">
+  <meta name="theme-color" content="#0c1a2b">
+
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TasklyTools">
+  <meta property="og:title" content="Invoice Generator - Free Online Invoice Maker">
+  <meta property="og:description" content="Build a professional invoice with automatic totals, tax, and discounts. Print or save as PDF from your browser.">
+  <meta property="og:url" content="https://tasklytools.org/tools/invoice-generator/">
+  <meta property="og:image" content="https://tasklytools.org/wp-content/uploads/2025/09/ttls-hbanner-min.png">
+  <meta property="og:image:width" content="1536">
+  <meta property="og:image:height" content="1024">
+  <meta property="og:image:type" content="image/png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Invoice Generator - Free Online Invoice Maker">
+  <meta name="twitter:description" content="Create an invoice with automatic totals and print it or save it as a PDF. Free, browser-based, no signup.">
+  <meta name="twitter:image" content="https://tasklytools.org/wp-content/uploads/2025/09/ttls-hbanner-min.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/wp-content/themes/aj-square/style.css?ver=1.0.0">
+  <link rel="stylesheet" href="/wp-content/themes/aj-square/assets/css/style.css?ver=1.0.0">
+  <link rel="stylesheet" href="/wp-content/themes/aj-square/assets/css/bootstrap.min.css?ver=4.6.2">
+  <link rel="stylesheet" href="/wp-content/themes/aj-square/assets/bootstrap-icons/bootstrap-icons95a1.css?ver=1.10.5">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GT-MJWCNQXM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "GT-MJWCNQXM");
+  </script>
+  <script>
+    (function(w,d,s,l,i){
+      w[l]=w[l]||[];
+      w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';
+      j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+      f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P879KSTN');
+  </script>
+  <link rel="stylesheet" href="../../tasklytools-new-assets/css/design-system.css">
+  <link rel="stylesheet" href="../../tasklytools-new-assets/css/main.css">
+  <link rel="stylesheet" href="../../tasklytools-new-assets/css/responsive.css">
+  <link rel="stylesheet" href="../../tasklytools-new-assets/css/tools.css">
+
+  <link rel="icon" href="/wp-content/uploads/2025/05/cropped-favicon-1-32x32.png" sizes="32x32">
+  <link rel="icon" href="/wp-content/uploads/2025/05/cropped-favicon-1-192x192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/wp-content/uploads/2025/05/cropped-favicon-1-180x180.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://tasklytools.org/#organization",
+        "name": "TasklyTools",
+        "url": "https://tasklytools.org/",
+        "logo": "https://tasklytools.org/wp-content/uploads/2025/05/taskly-tools.png"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://tasklytools.org/#website",
+        "url": "https://tasklytools.org/",
+        "name": "TasklyTools",
+        "publisher": { "@id": "https://tasklytools.org/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://tasklytools.org/tools/invoice-generator/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://tasklytools.org/" },
+          { "@type": "ListItem", "position": 2, "name": "Tools", "item": "https://tasklytools.org/tools/all/" },
+          { "@type": "ListItem", "position": 3, "name": "Invoice Generator", "item": "https://tasklytools.org/tools/invoice-generator/" }
+        ]
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://tasklytools.org/tools/invoice-generator/#app",
+        "name": "Invoice Generator",
+        "url": "https://tasklytools.org/tools/invoice-generator/",
+        "description": "Create a professional invoice with line items, tax, discounts, and automatic totals, then print or save it as a PDF.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Any browser",
+        "browserRequirements": "Requires JavaScript",
+        "isPartOf": { "@id": "https://tasklytools.org/#website" },
+        "publisher": { "@id": "https://tasklytools.org/#organization" },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://tasklytools.org/tools/invoice-generator/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I create an invoice?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Enter your business details, client details, invoice number, and dates. Add one line item at a time with a description, quantity, and unit price. The preview updates as you type, and the Print / Save PDF button opens your browser print dialog."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the Invoice Generator free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The TasklyTools Invoice Generator is free to use and does not require an account."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my invoice data stored or uploaded?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The invoice is built locally in your browser. Your details and line items are not sent to a TasklyTools server. Closing the page clears the form."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I save the invoice as a PDF?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Use Print / Save PDF and choose the PDF option in your browser print dialog. The printed page includes only the invoice, not the website navigation or form fields."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How are tax and discounts calculated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The subtotal is the sum of quantity multiplied by unit price for each line. A discount is applied to the subtotal first, then tax is calculated on the discounted amount. A fixed discount cannot be larger than the subtotal."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use a different currency?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Choose a currency from the list and the invoice totals update. The tool formats amounts for display; it does not convert between currencies."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="tt-new tt-tool-page tt-print-page">
+  <a class="tt-skip-link" href="#main-content">Skip to main content</a>
+  <div id="pre-load-animation"></div>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P879KSTN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+  <header class="container-fluid sticky-top" id="main-header">
+    <div id="navbar-container"></div>
+  </header>
+
+  <main id="main-content" class="tt-main">
+    <section class="tt-tool-hero">
+      <div class="tt-container">
+        <nav class="tt-breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/tools/all/">Tools</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Invoice Generator</span>
+        </nav>
+        <div class="tt-badge-row">
+          <span class="tt-badge tt-badge-live"><i class="bi bi-check-circle-fill" aria-hidden="true"></i>Live tool</span>
+          <span class="tt-badge tt-badge-neutral">Free</span>
+          <span class="tt-badge tt-badge-neutral">No signup</span>
+          <span class="tt-badge tt-badge-neutral">Runs in your browser</span>
+        </div>
+        <h1>Invoice Generator</h1>
+        <p>Create a clean, professional invoice with automatic totals. Add your details and line items, apply tax or a discount if needed, then print or save the finished invoice as a PDF.</p>
+      </div>
+    </section>
+
+    <section class="tt-section tt-mt-0 tt-print-section">
+      <div class="tt-container">
+        <div class="tt-tool-layout tt-tool-layout--wide">
+          <div class="tt-tool-panel">
+            <h2>Invoice details</h2>
+            <p class="tt-panel-sub">Required fields are marked with an asterisk. The preview updates as you type.</p>
+
+            <form id="invoiceForm" novalidate>
+              <div class="tt-form-grid">
+                <div class="tt-field">
+                  <label class="tt-label" for="invoiceNumber">Invoice number <span class="tt-required" aria-hidden="true">*</span></label>
+                  <input class="tt-input" id="invoiceNumber" name="invoiceNumber" type="text" autocomplete="off" required aria-describedby="invoiceNumber-error">
+                  <p class="tt-error" id="invoiceNumber-error" aria-live="polite"></p>
+                </div>
+
+                <div class="tt-field">
+                  <label class="tt-label" for="currency">Currency</label>
+                  <select class="tt-select" id="currency" name="currency">
+                    <option value="USD" selected>USD - US dollar</option>
+                    <option value="EUR">EUR - Euro</option>
+                    <option value="GBP">GBP - British pound</option>
+                    <option value="CAD">CAD - Canadian dollar</option>
+                    <option value="AUD">AUD - Australian dollar</option>
+                    <option value="NZD">NZD - New Zealand dollar</option>
+                    <option value="INR">INR - Indian rupee</option>
+                    <option value="NGN">NGN - Nigerian naira</option>
+                    <option value="ZAR">ZAR - South African rand</option>
+                    <option value="KES">KES - Kenyan shilling</option>
+                    <option value="GHS">GHS - Ghanaian cedi</option>
+                    <option value="PHP">PHP - Philippine peso</option>
+                    <option value="SGD">SGD - Singapore dollar</option>
+                  </select>
+                  <p class="tt-help">Display only. Amounts are not converted.</p>
+                </div>
+
+                <div class="tt-field">
+                  <label class="tt-label" for="issueDate">Issue date <span class="tt-required" aria-hidden="true">*</span></label>
+                  <input class="tt-input" id="issueDate" name="issueDate" type="date" required aria-describedby="issueDate-error">
+                  <p class="tt-error" id="issueDate-error" aria-live="polite"></p>
+                </div>
+
+                <div class="tt-field">
+                  <label class="tt-label" for="dueDate">Due date <span class="tt-required" aria-hidden="true">*</span></label>
+                  <input class="tt-input" id="dueDate" name="dueDate" type="date" required aria-describedby="dueDate-error">
+                  <p class="tt-error" id="dueDate-error" aria-live="polite"></p>
+                </div>
+              </div>
+
+              <div class="tt-form-section">
+                <h3 class="tt-form-section-title">Your details</h3>
+                <div class="tt-form-grid">
+                  <div class="tt-field">
+                    <label class="tt-label" for="fromName">Business or your name <span class="tt-required" aria-hidden="true">*</span></label>
+                    <input class="tt-input" id="fromName" name="fromName" type="text" autocomplete="organization" placeholder="Your business name" required aria-describedby="fromName-error">
+                    <p class="tt-error" id="fromName-error" aria-live="polite"></p>
+                  </div>
+                  <div class="tt-field">
+                    <label class="tt-label" for="fromEmail">Email <span class="tt-meta">(optional)</span></label>
+                    <input class="tt-input" id="fromEmail" name="fromEmail" type="email" autocomplete="email" placeholder="you@example.com" aria-describedby="fromEmail-error">
+                    <p class="tt-error" id="fromEmail-error" aria-live="polite"></p>
+                  </div>
+                  <div class="tt-field tt-field--full">
+                    <label class="tt-label" for="fromAddress">Address <span class="tt-meta">(optional)</span></label>
+                    <textarea class="tt-textarea" id="fromAddress" name="fromAddress" rows="2" autocomplete="street-address" placeholder="Street, city, country"></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tt-form-section">
+                <h3 class="tt-form-section-title">Bill to</h3>
+                <div class="tt-form-grid">
+                  <div class="tt-field">
+                    <label class="tt-label" for="clientName">Client or customer name <span class="tt-required" aria-hidden="true">*</span></label>
+                    <input class="tt-input" id="clientName" name="clientName" type="text" autocomplete="off" placeholder="Client name" required aria-describedby="clientName-error">
+                    <p class="tt-error" id="clientName-error" aria-live="polite"></p>
+                  </div>
+                  <div class="tt-field">
+                    <label class="tt-label" for="clientEmail">Client email <span class="tt-meta">(optional)</span></label>
+                    <input class="tt-input" id="clientEmail" name="clientEmail" type="email" autocomplete="off" placeholder="client@example.com" aria-describedby="clientEmail-error">
+                    <p class="tt-error" id="clientEmail-error" aria-live="polite"></p>
+                  </div>
+                  <div class="tt-field tt-field--full">
+                    <label class="tt-label" for="clientAddress">Client address <span class="tt-meta">(optional)</span></label>
+                    <textarea class="tt-textarea" id="clientAddress" name="clientAddress" rows="2" autocomplete="off" placeholder="Street, city, country"></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tt-form-section">
+                <h3 class="tt-form-section-title">Line items</h3>
+                <div class="tt-line-items" id="invoiceItems"></div>
+                <p class="tt-error" id="invoiceItems-error" aria-live="polite"></p>
+                <div class="tt-form-actions tt-mt-2">
+                  <button class="tt-btn tt-btn-secondary" id="addInvoiceItem" type="button">
+                    <i class="bi bi-plus-lg" aria-hidden="true"></i>
+                    Add line item
+                  </button>
+                </div>
+              </div>
+
+              <div class="tt-form-section">
+                <h3 class="tt-form-section-title">Tax and discount</h3>
+                <div class="tt-form-grid">
+                  <div class="tt-field">
+                    <label class="tt-label" for="taxRate">Tax rate (%)</label>
+                    <input class="tt-input" id="taxRate" name="taxRate" type="number" min="0" max="100" step="0.01" inputmode="decimal" value="0" aria-describedby="taxRateHelp taxRate-error">
+                    <p class="tt-help" id="taxRateHelp">Enter 10 for 10%. Leave at 0 if tax does not apply.</p>
+                    <p class="tt-error" id="taxRate-error" aria-live="polite"></p>
+                  </div>
+                  <div class="tt-field">
+                    <label class="tt-label" for="discountType">Discount type</label>
+                    <select class="tt-select" id="discountType" name="discountType">
+                      <option value="percent" selected>Percentage</option>
+                      <option value="fixed">Fixed amount</option>
+                    </select>
+                  </div>
+                  <div class="tt-field">
+                    <label class="tt-label" for="discountValue">Discount value</label>
+                    <input class="tt-input" id="discountValue" name="discountValue" type="number" min="0" step="0.01" inputmode="decimal" value="0" aria-describedby="discountValueHelp discountValue-error">
+                    <p class="tt-help" id="discountValueHelp">Applied before tax. A fixed discount is capped at the subtotal.</p>
+                    <p class="tt-error" id="discountValue-error" aria-live="polite"></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tt-form-section">
+                <h3 class="tt-form-section-title">Notes and terms</h3>
+                <div class="tt-form-grid">
+                  <div class="tt-field">
+                    <label class="tt-label" for="invoiceNotes">Notes <span class="tt-meta">(optional)</span></label>
+                    <textarea class="tt-textarea" id="invoiceNotes" name="invoiceNotes" rows="3" placeholder="A short note for your client"></textarea>
+                  </div>
+                  <div class="tt-field">
+                    <label class="tt-label" for="invoiceTerms">Payment terms <span class="tt-meta">(optional)</span></label>
+                    <textarea class="tt-textarea" id="invoiceTerms" name="invoiceTerms" rows="3" placeholder="Payment instructions or terms"></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tt-status tt-status--error tt-error-summary" id="invoiceErrorSummary" role="alert" hidden>
+                <i class="bi bi-x-circle" aria-hidden="true"></i>
+                <div>
+                  <strong>Check these fields:</strong>
+                  <ul id="invoiceErrorList"></ul>
+                </div>
+              </div>
+
+              <div class="tt-form-actions">
+                <button class="tt-btn tt-btn-primary" id="printInvoiceBtn" type="button">
+                  <i class="bi bi-printer" aria-hidden="true"></i>
+                  Print / Save PDF
+                </button>
+                <button class="tt-btn tt-btn-secondary" id="resetInvoiceBtn" type="button">Reset</button>
+              </div>
+              <p class="tt-print-note">Printing uses your browser's print dialog. Choose "Save as PDF" there to create a PDF copy. Nothing is uploaded.</p>
+            </form>
+          </div>
+
+          <aside class="tt-tool-panel tt-output-panel tt-print-target" aria-labelledby="invoicePreviewTitle">
+            <h2 id="invoicePreviewTitle" class="tt-print-hide">Invoice preview</h2>
+            <p class="tt-panel-sub tt-print-hide">This is exactly what will be printed. Use your browser print dialog to save it as a PDF.</p>
+
+            <div class="tt-preview-shell">
+              <article class="tt-invoice-paper" id="invoicePaper" aria-label="Invoice preview">
+                <div class="tt-invoice-head">
+                  <div>
+                    <p class="tt-invoice-kicker">Invoice</p>
+                    <p class="tt-invoice-business" id="previewBusinessName">Your business</p>
+                    <p class="tt-invoice-contact" id="previewBusinessContact"></p>
+                  </div>
+                  <div class="tt-invoice-meta">
+                    <div><span>Invoice no.</span><strong id="previewInvoiceNumber">Not set</strong></div>
+                    <div><span>Issued</span><strong id="previewIssueDate">Not set</strong></div>
+                    <div><span>Due</span><strong id="previewDueDate">Not set</strong></div>
+                  </div>
+                </div>
+
+                <div class="tt-invoice-parties">
+                  <div>
+                    <h3>Bill to</h3>
+                    <p id="previewClientName">Client name</p>
+                    <p class="tt-invoice-contact" id="previewClientContact"></p>
+                  </div>
+                </div>
+
+                <table class="tt-invoice-table">
+                  <caption class="tt-visually-hidden">Invoice line items with quantity, unit price, and amount</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Description</th>
+                      <th scope="col">Qty</th>
+                      <th scope="col">Unit price</th>
+                      <th scope="col">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody id="invoicePreviewItems"></tbody>
+                </table>
+
+                <div class="tt-invoice-totals">
+                  <div><span>Subtotal</span><strong id="previewSubtotal">$0.00</strong></div>
+                  <div id="previewDiscountRow" hidden><span id="previewDiscountLabel">Discount</span><strong id="previewDiscount">-$0.00</strong></div>
+                  <div id="previewTaxRow" hidden><span id="previewTaxLabel">Tax</span><strong id="previewTax">$0.00</strong></div>
+                  <div class="tt-invoice-grand"><span>Total</span><strong id="previewTotal">$0.00</strong></div>
+                </div>
+
+                <div class="tt-invoice-notes" id="previewNotesSection" hidden>
+                  <h3>Notes</h3>
+                  <p id="previewNotes"></p>
+                </div>
+                <div class="tt-invoice-notes" id="previewTermsSection" hidden>
+                  <h3>Payment terms</h3>
+                  <p id="previewTerms"></p>
+                </div>
+
+                <p class="tt-invoice-thanks">Thank you for your business.</p>
+              </article>
+            </div>
+          </aside>
+        </div>
+
+        <noscript>
+          <div class="tt-note tt-mt-3">
+            <p>The Invoice Generator needs JavaScript to calculate totals and prepare the printable invoice. Enable JavaScript to use the tool.</p>
+          </div>
+        </noscript>
+      </div>
+    </section>
+
+    <section class="tt-section tt-section--white" aria-labelledby="howToTitle">
+      <div class="tt-container">
+        <div class="tt-section-head">
+          <span class="tt-eyebrow"><i class="bi bi-list-check" aria-hidden="true"></i>How to use it</span>
+          <h2 id="howToTitle">Create a client-ready invoice</h2>
+          <p>Fill in the form once, check the preview, and print the finished invoice.</p>
+        </div>
+        <div class="tt-tool-layout">
+          <div>
+            <ol class="tt-instructions">
+              <li>Add your invoice number, issue date, and due date. The defaults are a starting point, not a rule.</li>
+              <li>Enter your business details and the client's billing details.</li>
+              <li>Add each line item with a clear description, quantity, and unit price. Add more lines as needed.</li>
+              <li>Set a tax rate or discount if they apply. The invoice applies the discount first, then tax.</li>
+              <li>Check the preview, then choose Print / Save PDF and pick your printer or the PDF option.</li>
+            </ol>
+          </div>
+          <div class="tt-tool-panel">
+            <h3 class="tt-mb-1">Keep your invoice clear</h3>
+            <ul class="tt-example-values">
+              <li><span>Invoice number</span><strong>Unique and sequential</strong></li>
+              <li><span>Line descriptions</span><strong>Specific and scannable</strong></li>
+              <li><span>Due date</span><strong>Agreed payment window</strong></li>
+              <li><span>Payment terms</span><strong>How and where to pay</strong></li>
+            </ul>
+            <p class="tt-help tt-mt-2">Tax rules differ by location. Check the correct rate and wording for your situation before sending an invoice.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tt-section" aria-labelledby="invoiceFaqTitle">
+      <div class="tt-container tt-container--narrow">
+        <div class="tt-section-head">
+          <span class="tt-eyebrow"><i class="bi bi-question-circle" aria-hidden="true"></i>FAQ</span>
+          <h2 id="invoiceFaqTitle">Invoice Generator questions</h2>
+          <p>Short answers about privacy, printing, and how the totals work.</p>
+        </div>
+        <div class="tt-faq">
+          <details>
+            <summary>How do I create an invoice?</summary>
+            <div class="tt-faq-body">
+              <p>Enter your business details, client details, invoice number, and dates. Add one line item at a time with a description, quantity, and unit price. The preview updates as you type, and the Print / Save PDF button opens your browser print dialog.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Is the Invoice Generator free?</summary>
+            <div class="tt-faq-body">
+              <p>Yes. The TasklyTools Invoice Generator is free to use and does not require an account.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Is my invoice data stored or uploaded?</summary>
+            <div class="tt-faq-body">
+              <p>No. The invoice is built locally in your browser. Your details and line items are not sent to a TasklyTools server. Closing the page clears the form.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Can I save the invoice as a PDF?</summary>
+            <div class="tt-faq-body">
+              <p>Yes. Use Print / Save PDF and choose the PDF option in your browser print dialog. The printed page includes only the invoice, not the website navigation or form fields.</p>
+            </div>
+          </details>
+          <details>
+            <summary>How are tax and discounts calculated?</summary>
+            <div class="tt-faq-body">
+              <p>The subtotal is the sum of quantity multiplied by unit price for each line. A discount is applied to the subtotal first, then tax is calculated on the discounted amount. A fixed discount cannot be larger than the subtotal.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Can I use a different currency?</summary>
+            <div class="tt-faq-body">
+              <p>Yes. Choose a currency from the list and the invoice totals update. The tool formats amounts for display; it does not convert between currencies.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="tt-section tt-section--white" aria-labelledby="relatedTitle">
+      <div class="tt-container">
+        <div class="tt-note tt-mb-2"><p>Want the full walkthrough? Read <a href="/guides/how-to-create-a-professional-freelancer-invoice/">how to create a professional freelancer invoice</a>, including line items, payment terms, and a final review checklist.</p></div>
+        <div class="tt-section-head">
+          <span class="tt-eyebrow"><i class="bi bi-grid" aria-hidden="true"></i>Keep exploring</span>
+          <h2 id="relatedTitle">More tools for your workflow</h2>
+          <p>Keep your pricing and client paperwork moving with these TasklyTools.</p>
+        </div>
+        <div class="tt-related-grid">
+          <a class="tt-related-card" href="/tools/profit-calculator/">
+            <span class="tt-icon-box"><i class="bi bi-graph-up-arrow" aria-hidden="true"></i></span>
+            <div>
+              <h3>Profit Calculator</h3>
+              <p>Check margin before you invoice</p>
+            </div>
+          </a>
+          <a class="tt-related-card" href="/tools/freelance-rate-calculator/">
+            <span class="tt-icon-box"><i class="bi bi-calculator" aria-hidden="true"></i></span>
+            <div>
+              <h3>Freelance Rate Calculator</h3>
+              <p>Price your time sustainably</p>
+            </div>
+          </a>
+          <a class="tt-related-card" href="/tools/utm-builder/">
+            <span class="tt-icon-box"><i class="bi bi-link-45deg" aria-hidden="true"></i></span>
+            <div>
+              <h3>UTM Builder</h3>
+              <p>Build campaign links</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container-fluid footer-section pt-5 pb-3">
+    <div id="footer-container"></div>
+  </footer>
+
+  <template id="invoiceItemTemplate">
+    <div class="tt-line-item" data-invoice-item>
+      <div class="tt-line-item-grid">
+        <div class="tt-field">
+          <label class="tt-label" data-label-for="description">
+            Description <span class="tt-required" aria-hidden="true">*</span>
+          </label>
+          <input class="tt-input" data-field="description" type="text" autocomplete="off" placeholder="Website redesign" aria-describedby="item-description-0-error">
+          <p class="tt-error" data-error-for="description" aria-live="polite"></p>
+        </div>
+        <div class="tt-field">
+          <label class="tt-label" data-label-for="quantity">
+            Qty <span class="tt-required" aria-hidden="true">*</span>
+          </label>
+          <input class="tt-input" data-field="quantity" type="number" min="0" step="0.01" inputmode="decimal" value="1" aria-describedby="item-quantity-0-error">
+          <p class="tt-error" data-error-for="quantity" aria-live="polite"></p>
+        </div>
+        <div class="tt-field">
+          <label class="tt-label" data-label-for="unitPrice">Unit price</label>
+          <input class="tt-input" data-field="unitPrice" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00" aria-describedby="item-unitPrice-0-error">
+          <p class="tt-error" data-error-for="unitPrice" aria-live="polite"></p>
+        </div>
+      </div>
+      <div class="tt-line-item-foot">
+        <span class="tt-line-total">Line total: <span data-line-total>$0.00</span></span>
+        <button class="tt-remove-item" type="button" data-remove-item>Remove</button>
+      </div>
+    </div>
+  </template>
+
+  <script src="/footer-script.js" defer></script>
+  <script src="/nav.js" defer></script>
+  <script src="/wp-content/themes/aj-square/assets/js/script.js?ver=1.1.0" defer></script>
+  <script src="/wp-content/themes/aj-square/assets/js/bootstrap.bundle.min.js?ver=4.6.2" defer></script>
+  <script src="../../tasklytools-new-assets/js/config.js" defer></script>
+  <script src="../../tasklytools-new-assets/js/components.js" defer></script>
+  <script src="../../tasklytools-new-assets/js/tool-utils.js" defer></script>
+  <script src="../../tasklytools-new-assets/js/invoice-logic.js" defer></script>
+  <script src="../../tasklytools-new-assets/js/invoice-generator.js" defer></script>
+</body>
+</html>

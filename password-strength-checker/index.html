@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Check password strength and entropy locally in your browser. Review length, character variety, common-password matches, patterns, crack times, and tips.">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    <title>Password Strength &amp; Entropy Meter - Taskly Tools</title>
+    <link rel="canonical" href="https://tasklytools.org/password-strength-checker/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Password Strength &amp; Entropy Meter - Taskly Tools">
+    <meta property="og:url" content="https://tasklytools.org/password-strength-checker/">
+    <meta property="og:site_name" content="Taskly Tools">
+    <meta property="og:image" content="https://tasklytools.org/wp-content/uploads/2025/05/taskly-tools-1.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/wp-content/themes/aj-square/style.css?ver=1.0.0">
+    <link rel="stylesheet" href="/wp-content/themes/aj-square/assets/css/style.css?ver=1.0.0">
+    <link rel="stylesheet" href="/wp-content/themes/aj-square/assets/css/bootstrap.min.css?ver=4.6.2">
+    <link rel="stylesheet" href="/wp-content/themes/aj-square/assets/bootstrap-icons/bootstrap-icons95a1.css?ver=1.10.5">
+    <link rel="stylesheet" href="/assets/tools/toolkit.css?ver=1.0.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+
+    <link rel="icon" href="/wp-content/uploads/2025/05/cropped-favicon-1-32x32.png" sizes="32x32">
+    <link rel="icon" href="/wp-content/uploads/2025/05/cropped-favicon-1-192x192.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="/wp-content/uploads/2025/05/cropped-favicon-1-180x180.png">
+  </head>
+  <body class="tt-tool-body wp-singular page-template page-template-template-customblock page-template-template-customblock-php page wp-theme-aj-square">
+    <a class="tt-skip-link" href="#tool">Skip to tool</a>
+    <div id="pre-load-animation"></div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+    <header class="container-fluid sticky-top" id="main-header">
+      <div id="navbar-container"></div>
+    </header>
+
+    <main id="tool" class="container tt-page">
+      <div class="tt-hero">
+        <nav class="tt-breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/utility-tools/">Utility Tools</a>
+          <span aria-hidden="true">/</span>
+          <span>Password Strength &amp; Entropy Meter</span>
+        </nav>
+        <h1>Password Strength &amp; Entropy Meter</h1>
+        <p>Measure password length, character variety, common-password matches, predictable patterns, and estimated crack times. Analysis happens entirely in your browser.</p>
+      </div>
+
+      <div class="tt-layout">
+        <section class="tt-card" aria-labelledby="password-input-title">
+          <div class="tt-card-head">
+            <div>
+              <h2 id="password-input-title">Check a password</h2>
+              <p class="tt-help">The password is not sent, logged, or saved anywhere.</p>
+            </div>
+          </div>
+
+          <div class="tt-form-row">
+            <label class="tt-label" for="passwordInput">Password</label>
+            <div class="tt-password-wrap">
+              <input
+                class="tt-input"
+                type="password"
+                id="passwordInput"
+                placeholder="Type or paste a password"
+                autocomplete="off"
+                autocapitalize="off"
+                autocorrect="off"
+                spellcheck="false"
+                aria-describedby="passwordPrivacy"
+              >
+              <button type="button" class="tt-password-toggle" id="togglePasswordBtn" aria-label="Show password" aria-pressed="false" title="Show password">
+                <i class="bi bi-eye" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="tt-rating">
+            <strong id="strengthLabel">No password</strong>
+            <span id="strengthEntropy">0 bits estimated entropy</span>
+          </div>
+          <div class="tt-meter" id="strengthMeter" role="progressbar" aria-label="Password strength" aria-valuemin="0" aria-valuemax="4" aria-valuenow="0">
+            <div class="tt-meter-fill" id="strengthFill" data-level="0" style="width: 0;"></div>
+          </div>
+
+          <p class="tt-status tt-status--neutral tt-mt-2" id="passwordStatus" role="status" aria-live="polite">
+            Start typing to measure length, character variety, patterns, and estimated crack times. The password never leaves this page.
+          </p>
+
+          <div class="tt-metric-grid tt-mt-2">
+            <div class="tt-metric">
+              <span class="tt-metric-label">Entropy</span>
+              <span class="tt-metric-value" id="passwordEntropy">0 bits</span>
+            </div>
+            <div class="tt-metric">
+              <span class="tt-metric-label">Length</span>
+              <span class="tt-metric-value" id="passwordLength">0</span>
+            </div>
+            <div class="tt-metric">
+              <span class="tt-metric-label">Character pool</span>
+              <span class="tt-metric-value" id="passwordPool">0</span>
+            </div>
+          </div>
+
+          <h3 class="tt-mt-2">Composition checks</h3>
+          <div class="tt-chips" id="passwordChecks"></div>
+
+          <div class="tt-btn-row">
+            <button type="button" class="tt-btn tt-btn-secondary" id="resetPasswordBtn">
+              <i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i>
+              Clear
+            </button>
+          </div>
+        </section>
+
+        <div class="tt-stack">
+          <section class="tt-card" aria-labelledby="crack-times-title">
+            <div class="tt-card-head">
+              <div>
+                <h2 id="crack-times-title">Estimated crack times</h2>
+                <p class="tt-help">Rough guesses based on the estimated entropy and common attack speeds.</p>
+              </div>
+            </div>
+
+            <div class="tt-metric-grid">
+              <div class="tt-metric">
+                <span class="tt-metric-label">Online, throttled</span>
+                <span class="tt-metric-value" id="crackThrottled">-</span>
+              </div>
+              <div class="tt-metric">
+                <span class="tt-metric-label">Online, unthrottled</span>
+                <span class="tt-metric-value" id="crackOnline">-</span>
+              </div>
+              <div class="tt-metric">
+                <span class="tt-metric-label">Offline, slow hash</span>
+                <span class="tt-metric-value" id="crackSlow">-</span>
+              </div>
+              <div class="tt-metric">
+                <span class="tt-metric-label">Offline, fast hash</span>
+                <span class="tt-metric-value" id="crackFast">-</span>
+              </div>
+            </div>
+
+            <p class="tt-help tt-mt-2">These estimates are illustrative, not a guarantee. Real attack speeds depend on the hashing algorithm, hardware, rate limits, password reuse, and the attacker's wordlists.</p>
+          </section>
+
+          <section class="tt-card" aria-labelledby="password-feedback-title">
+            <div class="tt-card-head">
+              <h2 id="password-feedback-title">Feedback</h2>
+            </div>
+
+            <div class="tt-hidden" id="passwordWarningsBox">
+              <h3>Warnings</h3>
+              <ul class="tt-messages" id="passwordWarnings"></ul>
+            </div>
+
+            <div class="tt-hidden tt-mt-2" id="passwordSuggestionsBox">
+              <h3>Suggestions</h3>
+              <ul class="tt-messages" id="passwordSuggestions"></ul>
+            </div>
+          </section>
+
+          <div class="tt-privacy" id="passwordPrivacy">
+            <strong>Local-only check:</strong> the password is analyzed in this browser tab. It is not transmitted to Taskly Tools or any third party, stored in local storage, or added to the page URL. Close or reload the tab to discard it.
+          </div>
+        </div>
+      </div>
+
+      <div class="tt-content">
+        <h2>How password strength is estimated</h2>
+        <p>Entropy is a rough measure of unpredictability, usually expressed in bits. More bits generally mean more guesses are required. A long random password has more entropy than a short one, but length alone is not enough: repeated characters, keyboard runs, dates, dictionary words, and common passwords drastically reduce the real number of guesses an attacker needs.</p>
+        <p>This meter combines a character-pool estimate with pattern penalties. It checks a bundled list of common passwords and common words, including simple leetspeak substitutions such as <code>@</code> for <code>a</code> and <code>0</code> for <code>o</code>. It also reduces the score for repeated blocks, repeated characters, alphabetic or numeric sequences, keyboard patterns, and obvious years. The result is a heuristic, not a formal audit of a specific hash or attack.</p>
+
+        <h2>Length beats complexity</h2>
+        <p>For most people, a long passphrase is easier to remember and stronger than a short password with a few symbol substitutions. Four to six randomly chosen words can produce excellent entropy, especially when the words are not a famous phrase. If you use a password manager, let it generate a random password of at least 16 characters, and never reuse it across sites. A password manager also removes the need to memorize every password.</p>
+
+        <h2>Why common passwords fail</h2>
+        <p>Attackers do not guess one password at a time from scratch. They use lists of leaked and commonly chosen passwords, plus rules that add years, capital letters, symbols, and keyboard patterns. A password such as <code>P@ssw0rd2025!</code> looks complex but follows a predictable recipe and can be cracked quickly. The composition checks in this tool are a useful guide, but they cannot replace a unique password and multi-factor authentication.</p>
+
+        <h2>What this tool does not do</h2>
+        <ul>
+          <li>It does not test whether a password has appeared in a breach service; that would require sending data to a server.</li>
+          <li>It does not guarantee that a password is safe against every attacker or every hashing method.</li>
+          <li>It does not store, log, or transmit the password.</li>
+          <li>It does not replace a password manager or multi-factor authentication.</li>
+        </ul>
+
+        <h2>Related tools</h2>
+        <div class="tt-related">
+          <a href="/base64-encoder-decoder/"><i class="bi bi-code-slash" aria-hidden="true"></i> Base64 Encoder &amp; Decoder</a>
+          <a href="/htaccess-redirect-generator/"><i class="bi bi-signpost-split" aria-hidden="true"></i> HTACCESS Redirect Generator</a>
+          <a href="/robots-txt-generator-validator/"><i class="bi bi-robot" aria-hidden="true"></i> Robots.txt Generator &amp; Validator</a>
+          <a href="/tools/malware-scanner/"><i class="bi bi-shield-exclamation" aria-hidden="true"></i> Malware Scanner</a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="container-fluid footer-section pt-5 pb-3">
+      <div id="footer-container"></div>
+    </footer>
+
+    <script src="/footer-script.js" defer></script>
+    <script src="/nav.js" defer></script>
+    <script src="/wp-content/themes/aj-square/assets/js/script.js?ver=1.1.0" defer></script>
+    <script src="/wp-content/themes/aj-square/assets/js/bootstrap.bundle.min.js?ver=4.6.2" defer></script>
+    <script src="/assets/tools/toolkit.js?ver=1.0.0" defer></script>
+    <script src="/password-strength-checker/logic.js?ver=1.0.0" defer></script>
+    <script src="/password-strength-checker/app.js?ver=1.0.0" defer></script>
+  </body>
+</html>
